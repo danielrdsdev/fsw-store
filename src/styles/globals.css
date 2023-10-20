@@ -71,7 +71,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground h-full dark flex flex-col font-sans;
+    @apply bg-background text-foreground dark font-sans h-full;
   }
   html {
     @apply h-full;

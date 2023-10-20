@@ -31,6 +31,16 @@ export default async function Home() {
         <SectionTitle>Ofertas</SectionTitle>
         <ProductList products={deals} />
       </section>
+      <section>
+        <Image
+          src="/banner-home-02.png"
+          width={0}
+          height={0}
+          className="h-auto w-full object-contain"
+          sizes="100vw"
+          alt="Até 55% de desconto em mouses"
+        />
+      </section>
     </main>
   )
 }

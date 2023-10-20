@@ -9,10 +9,11 @@ import {
   SheetTitle,
 } from '@/components/ui/sheet'
 import { NAV } from '@/constants/nav'
-import { LogIn, LogOut } from 'lucide-react'
+import { LogOut } from 'lucide-react'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { Icons } from '../icons'
 
 export const MobileNav = () => {
   const { data, status } = useSession()
@@ -30,8 +31,8 @@ export const MobileNav = () => {
             variant="outline"
             className="w-full justify-start"
           >
-            <LogIn className="w-4 h-4 mr-2" />
-            Fazer login
+            <Icons.google className="w-4 h-4 mr-2" />
+            Fazer login com Google
           </Button>
         ) : (
           <div className="flex flex-col gap-6">

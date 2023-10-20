@@ -1,6 +1,7 @@
 import Providers from '@/components/providers'
 import '../styles/globals.css'
 
+import { Footer } from '@/components/shared/footer'
 import { Header } from '@/components/shared/header'
 import { cn } from '@/lib/utils'
 import { fontSans } from '@/styles/fonts'
@@ -20,8 +21,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(fontSans.variable)}>
         <Providers>
-          <Header />
-          <div className="flex-1 py-16">{children}</div>
+          <div className="flex flex-col">
+            <Header />
+            <div className="flex-1 py-16">{children}</div>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>
