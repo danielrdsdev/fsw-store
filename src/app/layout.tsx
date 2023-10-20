@@ -1,10 +1,10 @@
+import Providers from '@/components/providers'
 import '../styles/globals.css'
 
 import { Header } from '@/components/shared/header'
+import { cn } from '@/lib/utils'
+import { fontSans } from '@/styles/fonts'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,9 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Header />
-        <div className="flex-1 py-16">{children}</div>
+      <body className={cn(fontSans.variable)}>
+        <Providers>
+          <Header />
+          <div className="flex-1 py-16">{children}</div>
+        </Providers>
       </body>
     </html>
   )
