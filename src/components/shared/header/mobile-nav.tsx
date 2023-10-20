@@ -12,9 +12,11 @@ import { NAV } from '@/constants/nav'
 import { LogIn, LogOut } from 'lucide-react'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export const MobileNav = () => {
   const { data, status } = useSession()
+  const pathname = usePathname()
 
   return (
     <SheetContent side="left">
@@ -64,7 +66,8 @@ export const MobileNav = () => {
               <Button
                 asChild
                 variant="outline"
-                className="w-full justify-start"
+                data-active={pathname === item.path}
+                className="w-full justify-start data-[active=true]:bg-accent"
               >
                 <Link href={item.path}>
                   {item.icon && <item.icon className="w-4 h-4 mr-2" />}
