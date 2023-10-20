@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetTrigger } from '@/components/ui/sheet'
 import { Menu, ShoppingCart } from 'lucide-react'
+import Link from 'next/link'
 import { MobileNav } from './mobile-nav'
 
 export const Header = () => {
@@ -14,9 +15,9 @@ export const Header = () => {
         </SheetTrigger>
         <MobileNav />
       </Sheet>
-      <h1 className="font-bold text-lg text-violet-600">
+      <Link href="/" className="font-bold text-lg text-violet-600">
         FSW <span className="font-semibold text-primary">Store</span>
-      </h1>
+      </Link>
       <Button size="icon" variant="outline">
         <ShoppingCart className="w-5 h-5" />
       </Button>
