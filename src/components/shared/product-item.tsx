@@ -1,7 +1,7 @@
+import { Badge } from '@/components/ui/badge'
 import { ProductWithTotalPrice } from '@/helpers/product'
 import { ArrowDown } from 'lucide-react'
 import Image from 'next/image'
-import { Badge } from '../ui/badge'
 
 type ProductItemProps = {
   product: ProductWithTotalPrice
@@ -17,6 +17,7 @@ export const ProductItem = ({ product }: ProductItemProps) => {
             {product.discountPercentage}%
           </Badge>
         )}
+
         <Image
           src={product.imageUrls[0]}
           width={0}
@@ -36,6 +37,7 @@ export const ProductItem = ({ product }: ProductItemProps) => {
               <span className="font-bold truncate">
                 R$ {product.totalPrice.toFixed(2)}
               </span>
+
               <span className="text-xs text-muted-foreground line-through truncate">
                 R$ {Number(product.basePrice).toFixed(2)}
               </span>

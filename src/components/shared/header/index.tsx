@@ -16,9 +16,11 @@ export const Header = () => {
           </SheetTrigger>
           <MobileNav />
         </Sheet>
+
         <Link href="/" className="font-bold text-lg text-violet-600">
           FSW <span className="font-semibold text-primary">Store</span>
         </Link>
+
         <Button size="icon" variant="outline">
           <ShoppingCart className="w-5 h-5" />
         </Button>

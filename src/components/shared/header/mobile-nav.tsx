@@ -1,4 +1,5 @@
 'use client'
+import { Icons } from '@/components/shared/icons'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
@@ -13,7 +14,6 @@ import { LogOut } from 'lucide-react'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Icons } from '../icons'
 
 export const MobileNav = () => {
   const { data, status } = useSession()
@@ -43,12 +43,14 @@ export const MobileNav = () => {
                 </AvatarFallback>
                 {data?.user?.image && <AvatarImage src={data.user.image} />}
               </Avatar>
+
               <div className="flex flex-col">
                 <p className="font-semibold">{data?.user?.name}</p>
                 <p className="text-muted-foreground text-sm">
                   {data?.user?.email}
                 </p>
               </div>
+
               <Button
                 onClick={() => signOut()}
                 variant="outline"
@@ -60,7 +62,9 @@ export const MobileNav = () => {
             </div>
           </div>
         )}
+
         <Separator />
+
         <nav className="space-y-4">
           {NAV.map((item) => (
             <SheetClose key={item.path} asChild>
