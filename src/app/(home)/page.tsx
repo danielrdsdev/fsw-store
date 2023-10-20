@@ -1,8 +1,9 @@
 import Image from 'next/image'
+import { Categories } from './components/categories'
 
 export default function Home() {
   return (
-    <main>
+    <main className="space-y-8 px-6">
       <section>
         <Image
           src="/banner-home-01.png"
@@ -12,6 +13,9 @@ export default function Home() {
           sizes="100vw"
           alt="Até 50% de desconto só esse mês"
         />
+      </section>
+      <section>
+        <Categories />
       </section>
     </main>
   )
