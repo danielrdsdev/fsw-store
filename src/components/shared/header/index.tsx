@@ -1,5 +1,10 @@
 import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTrigger,
+} from '@/components/ui/sheet'
 import { Menu, ShoppingCart } from 'lucide-react'
 import { MobileNav } from './mobile-nav'
 
@@ -12,9 +17,7 @@ export const Header = () => {
             <Menu className="w-5 h-5" />
           </Button>
         </SheetTrigger>
-        <SheetContent side="left">
-          <MobileNav />
-        </SheetContent>
+        <MobileNav />
       </Sheet>
       <h1 className="font-bold text-lg text-violet-600">
         FSW <span className="font-semibold text-primary">Store</span>
@@ -26,6 +29,7 @@ export const Header = () => {
           </Button>
         </SheetTrigger>
         <SheetContent>
+          <SheetHeader className="text-lg font-semibold">Carrinho</SheetHeader>
           <MobileNav />
         </SheetContent>
       </Sheet>
