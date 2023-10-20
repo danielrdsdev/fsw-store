@@ -10,7 +10,7 @@ type CategoryItemProps = {
 export const CategoryItem = ({ category }: CategoryItemProps) => {
   return (
     <Button asChild variant="outline" className="font-bold text-xs">
-      <Link href="/">
+      <Link href={`/category/${category.slug}`}>
         {CATEGORY_ICON[category.slug as keyof typeof CATEGORY_ICON]}
         {category.name}
       </Link>
