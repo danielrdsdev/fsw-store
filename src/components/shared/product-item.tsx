@@ -9,8 +9,8 @@ type ProductItemProps = {
 
 export const ProductItem = ({ product }: ProductItemProps) => {
   return (
-    <div className="flex flex-col gap-4 max-w-[170px]">
-      <div className="rounded-lg bg-muted flex items-center justify-center relative w-[170px] h-[170px]">
+    <div className="flex flex-col gap-4">
+      <div className="rounded-lg bg-muted flex items-center justify-center relative h-[170px] w-full">
         {product.discountPercentage > 0 && (
           <Badge className="absolute left-3 top-3 px-2 py-0.5">
             <ArrowDown className="w-3 h-3" />
@@ -26,8 +26,10 @@ export const ProductItem = ({ product }: ProductItemProps) => {
           alt={product.name}
         />
       </div>
+
       <div className="space-y-1">
         <h2 className="text-xs truncate">{product.name}</h2>
+
         <div className="flex items-center gap-2">
           {product.discountPercentage > 0 ? (
             <>
