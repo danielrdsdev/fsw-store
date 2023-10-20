@@ -58,9 +58,9 @@ export const MobileNav = () => {
                 <LogOut className="w-5 h-5" />
               </Button>
             </div>
-            <Separator className="mb-4" />
           </div>
         )}
+        <Separator />
         <nav className="space-y-4">
           {NAV.map((item) => (
             <SheetClose key={item.path} asChild>
