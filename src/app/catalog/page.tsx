@@ -7,7 +7,7 @@ export default async function CatalogPage() {
   const categories = await prismaClient.category.findMany()
 
   return (
-    <main className="px-6">
+    <main>
       <section className="space-y-8">
         <Badge
           variant="outline"
@@ -16,7 +16,7 @@ export default async function CatalogPage() {
           <Shapes className="w-4 h-4 mr-1.5" />
           Catálogo
         </Badge>
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {categories.map((category) => (
             <CategoryItem key={category.id} category={category} />
           ))}

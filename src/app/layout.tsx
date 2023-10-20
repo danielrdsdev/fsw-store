@@ -23,7 +23,7 @@ export default function RootLayout({
         <Providers>
           <div className="flex flex-col min-h-full">
             <Header />
-            <div className="flex-1 py-16">{children}</div>
+            <div className="flex-1 py-16 container">{children}</div>
             <Footer />
           </div>
         </Providers>

@@ -29,7 +29,7 @@ export default async function Home() {
     },
   })
   return (
-    <main className="space-y-8 px-6">
+    <main className="space-y-8">
       <section>
         <PromoBanner
           src="/banner-home-01.png"
