@@ -39,9 +39,7 @@ export const ProductItem = ({ product }: ProductItemProps) => {
               </span>
             </>
           ) : (
-            <span className="text-xs text-muted-foreground line-through">
-              R$ {Number(product.basePrice).toFixed(2)}
-            </span>
+            <span className="font-bold">R$ {product.basePrice.toFixed(2)}</span>
           )}
         </div>
       </div>
