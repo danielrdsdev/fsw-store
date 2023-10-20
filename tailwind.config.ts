@@ -16,6 +16,10 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        'gradient-category-item':
+          ' linear-gradient(45deg, #5033C3 0%, rgba(80, 51, 195, 0.2) 100%)',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
