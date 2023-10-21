@@ -1,7 +1,7 @@
+import { ProductList } from '@/components/shared/product-list'
 import { SectionTitle } from '@/components/shared/section-title'
 import { prismaClient } from '@/lib/prisma'
 import { Categories } from './components/categories'
-import { ProductList } from './components/product-list'
 import { PromoBanner } from './components/promo-banner'
 
 export default async function Home() {
