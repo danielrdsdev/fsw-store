@@ -11,7 +11,7 @@ export default async function CatalogPage() {
       <section className="space-y-8">
         <Badge
           variant="outline"
-          className="px-3 py-2 border-2 font-bold uppercase"
+          className="px-3 py-2 border-2 font-bold uppercase border-primary"
         >
           <Shapes className="w-4 h-4 mr-1.5" />
           Catálogo
