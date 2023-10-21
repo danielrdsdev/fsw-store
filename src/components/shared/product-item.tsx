@@ -2,6 +2,7 @@ import { Badge } from '@/components/ui/badge'
 import { ProductWithTotalPrice } from '@/helpers/product'
 import { ArrowDown } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 type ProductItemProps = {
   product: ProductWithTotalPrice
@@ -9,7 +10,7 @@ type ProductItemProps = {
 
 export const ProductItem = ({ product }: ProductItemProps) => {
   return (
-    <div className="flex flex-col gap-4">
+    <Link href={`/product/${product.slug}`} className="flex flex-col gap-4">
       <div className="rounded-lg bg-muted flex items-center justify-center relative h-[170px] w-full">
         {product.discountPercentage > 0 && (
           <Badge className="absolute left-3 top-3 px-2 py-0.5">
@@ -49,6 +50,6 @@ export const ProductItem = ({ product }: ProductItemProps) => {
           )}
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
