@@ -13,7 +13,8 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { Loader2, LogOut, User } from 'lucide-react'
-import { signIn, signOut, useSession } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
+import Link from 'next/link'
 
 export const UserNav = () => {
   const { status, data } = useSession()
@@ -25,7 +26,9 @@ export const UserNav = () => {
       ) : (
         <>
           {status === 'unauthenticated' ? (
-            <Button onClick={() => signIn('google')}>Fazer login</Button>
+            <Button asChild>
+              <Link href="/login">Fazer login</Link>
+            </Button>
           ) : (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

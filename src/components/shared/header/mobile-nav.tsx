@@ -1,5 +1,4 @@
 'use client'
-import { Icons } from '@/components/shared/icons'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
@@ -10,8 +9,8 @@ import {
   SheetTitle,
 } from '@/components/ui/sheet'
 import { NAV } from '@/constants/nav'
-import { LogOut } from 'lucide-react'
-import { signIn, signOut, useSession } from 'next-auth/react'
+import { LogIn, LogOut } from 'lucide-react'
+import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -26,13 +25,11 @@ export const MobileNav = () => {
       </SheetHeader>
       <div className="mt-6 space-y-4">
         {status === 'unauthenticated' ? (
-          <Button
-            onClick={() => signIn('google')}
-            variant="outline"
-            className="w-full justify-start"
-          >
-            <Icons.google className="w-4 h-4 mr-2" />
-            Fazer login com Google
+          <Button asChild variant="outline" className="w-full justify-start">
+            <Link href="/login">
+              <LogIn className="w-4 h-4 mr-2" />
+              Fazer login
+            </Link>
           </Button>
         ) : (
           <div className="flex flex-col gap-6">
