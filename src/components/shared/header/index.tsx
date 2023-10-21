@@ -9,7 +9,7 @@ import { UserNav } from './user-nav'
 
 export const Header = () => {
   return (
-    <header className="h-20 border-b px-6 lg:px-28 flex items-center justify-between">
+    <header className="h-20 border-b px-6 lg:px-32 flex items-center justify-between">
       <div className="lg:hidden">
         <Sheet>
           <SheetTrigger asChild>
@@ -34,10 +34,10 @@ export const Header = () => {
       </div>
 
       <div className="flex items-center gap-4">
+        <UserNav />
         <Button size="icon" variant="outline">
           <ShoppingCart className="w-5 h-5" />
         </Button>
-        <UserNav />
       </div>
     </header>
   )

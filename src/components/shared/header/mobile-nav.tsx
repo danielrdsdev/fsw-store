@@ -44,9 +44,9 @@ export const MobileNav = () => {
                 {data?.user?.image && <AvatarImage src={data.user.image} />}
               </Avatar>
 
-              <div className="flex flex-col">
-                <p className="font-semibold">{data?.user?.name}</p>
-                <p className="text-muted-foreground text-sm">
+              <div className="flex flex-col overflow-hidden">
+                <p className="font-semibold truncate">{data?.user?.name}</p>
+                <p className="text-muted-foreground text-sm truncate">
                   {data?.user?.email}
                 </p>
               </div>

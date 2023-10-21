@@ -19,7 +19,7 @@ export default async function CategoryProducts({ params }: any) {
   }
 
   return (
-    <main className="px-6 lg:px-28 py-16">
+    <main className="px-6 lg:px-32 py-16">
       <section className="space-y-8">
         <Badge
           variant="outline"
