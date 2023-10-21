@@ -18,12 +18,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={cn(fontSans.variable)}>
         <Providers>
           <div className="flex flex-col min-h-full">
             <Header />
-            <div className="flex-1 py-16 container">{children}</div>
+            <div className="flex-1">{children}</div>
             <Footer />
           </div>
         </Providers>

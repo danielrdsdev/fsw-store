@@ -7,7 +7,7 @@ export default async function CatalogPage() {
   const categories = await prismaClient.category.findMany()
 
   return (
-    <main>
+    <main className="px-6 lg:px-28 py-16">
       <section className="space-y-8">
         <Badge
           variant="outline"

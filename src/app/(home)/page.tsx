@@ -29,43 +29,67 @@ export default async function Home() {
     },
   })
   return (
-    <main className="space-y-8">
+    <main className="space-y-16 py-16 lg:pt-0">
       <section>
         <PromoBanner
           src="/banner-home-01.png"
           alt="Até 50% de descontos só esse mês"
+          className="lg:hidden"
+        />
+        <PromoBanner
+          src="/banner-home-01-desktop.png"
+          alt="Até 50% de descontos só esse mês"
+          className="hidden lg:block"
         />
       </section>
 
-      <section>
+      <section className="px-6 lg:px-28">
         <Categories />
       </section>
 
-      <section className="space-y-4">
+      <section className="space-y-4 px-6 lg:px-28">
         <SectionTitle>Ofertas</SectionTitle>
         <ProductList products={deals} />
       </section>
 
-      <section>
+      <section className="px-6 lg:px-28">
         <PromoBanner
           src="/banner-home-02.png"
           alt="Até 55% de desconto em mouses"
+          className="lg:hidden"
         />
+
+        <div className="hidden lg:flex items-center gap-8">
+          <PromoBanner
+            src="/banner-home-02-desktop.png"
+            alt="Até 55% de desconto em mouses"
+          />
+          <PromoBanner
+            src="/banner-home-03-desktop.png"
+            alt="Até 20% de desconto em fones"
+          />
+        </div>
       </section>
 
-      <section className="space-y-4">
+      <section className="space-y-4 px-6 lg:px-28">
         <SectionTitle>Teclados</SectionTitle>
         <ProductList products={keyboards} />
       </section>
 
-      <section>
+      <section className="px-6 lg:px-28">
         <PromoBanner
           src="/banner-home-03.png"
           alt="Até 20% de desconto em fones"
+          className="lg:hidden"
+        />
+        <PromoBanner
+          src="/banner-frete-gratis.png"
+          alt="Frete grátis para todo o Brasil"
+          className="hidden lg:block"
         />
       </section>
 
-      <section className="space-y-4">
+      <section className="space-y-4 px-6 lg:px-28">
         <SectionTitle>Mouses</SectionTitle>
         <ProductList products={mouses} />
       </section>

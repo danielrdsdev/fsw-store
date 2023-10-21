@@ -19,7 +19,7 @@ export default async function CategoryProducts({ params }: any) {
   }
 
   return (
-    <main>
+    <main className="px-6 lg:px-28 py-16">
       <section className="space-y-8">
         <Badge
           variant="outline"
@@ -28,7 +28,7 @@ export default async function CategoryProducts({ params }: any) {
           {CATEGORY_ICON[params.slug as keyof typeof CATEGORY_ICON]}
           {category.name}
         </Badge>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
           {category.products.map((product) => (
             <ProductItem
               key={product.id}
