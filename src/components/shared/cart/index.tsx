@@ -3,14 +3,16 @@
 import { CartContext } from '@/components/providers/cart'
 import { Badge } from '@/components/ui/badge'
 import { SheetHeader } from '@/components/ui/sheet'
+import { computeProductTotalPrice } from '@/helpers/product'
 import { ShoppingCart } from 'lucide-react'
 import { useContext } from 'react'
+import { CartItem } from './cart-item'
 
 export const Cart = () => {
   const { products } = useContext(CartContext)
 
   return (
-    <>
+    <div className="space-y-5">
       <SheetHeader>
         <Badge
           variant="outline"
@@ -21,9 +23,14 @@ export const Cart = () => {
         </Badge>
       </SheetHeader>
 
-      {products.map((product) => (
-        <h1 key={product.id}>{product.name}</h1>
-      ))}
-    </>
+      <div className="space-y-5">
+        {products.map((product) => (
+          <CartItem
+            key={product.id}
+            product={computeProductTotalPrice(product as any) as any}
+          />
+        ))}
+      </div>
+    </div>
   )
 }
