@@ -1,5 +1,6 @@
+import { Cart } from '@/components/shared/cart'
 import { Button } from '@/components/ui/button'
-import { Sheet, SheetTrigger } from '@/components/ui/sheet'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { NAV } from '@/constants/nav'
 import { Menu, ShoppingCart } from 'lucide-react'
 import Link from 'next/link'
@@ -17,7 +18,9 @@ export const Header = () => {
               <Menu className="w-5 h-5" />
             </Button>
           </SheetTrigger>
-          <MobileNav />
+          <SheetContent side="left">
+            <MobileNav />
+          </SheetContent>
         </Sheet>
       </div>
 
@@ -35,9 +38,16 @@ export const Header = () => {
 
       <div className="flex items-center gap-4">
         <UserNav />
-        <Button size="icon" variant="outline">
-          <ShoppingCart className="w-5 h-5" />
-        </Button>
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button size="icon" variant="outline">
+              <ShoppingCart className="w-5 h-5" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent>
+            <Cart />
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   )

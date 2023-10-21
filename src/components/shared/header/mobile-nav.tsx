@@ -2,12 +2,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-import {
-  SheetClose,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-} from '@/components/ui/sheet'
+import { SheetClose, SheetHeader, SheetTitle } from '@/components/ui/sheet'
 import { NAV } from '@/constants/nav'
 import { LogIn, LogOut } from 'lucide-react'
 import { signOut, useSession } from 'next-auth/react'
@@ -19,7 +14,7 @@ export const MobileNav = () => {
   const pathname = usePathname()
 
   return (
-    <SheetContent side="left">
+    <>
       <SheetHeader>
         <SheetTitle className="text-left">Menu</SheetTitle>
       </SheetHeader>
@@ -82,6 +77,6 @@ export const MobileNav = () => {
           ))}
         </nav>
       </div>
-    </SheetContent>
+    </>
   )
 }
