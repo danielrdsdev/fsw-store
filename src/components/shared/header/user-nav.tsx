@@ -19,11 +19,11 @@ export const UserNav = () => {
   const { status, data } = useSession()
 
   return (
-    <>
+    <div className="hidden lg:block">
       {status === 'loading' ? (
         <Loader2 className="w-5 h-5 animate-spin" />
       ) : (
-        <div className="hidden lg:block">
+        <>
           {status === 'unauthenticated' ? (
             <Button onClick={() => signIn('google')}>Fazer login</Button>
           ) : (
@@ -71,8 +71,8 @@ export const UserNav = () => {
               </DropdownMenuContent>
             </DropdownMenu>
           )}
-        </div>
+        </>
       )}
-    </>
+    </div>
   )
 }
