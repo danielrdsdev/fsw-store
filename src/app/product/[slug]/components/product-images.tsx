@@ -26,6 +26,7 @@ export const ProductImages = ({ imageUrls, name }: ProductImagesProps) => {
           className="h-auto max-h-[70%] w-auto max-w-[80%] object-contain"
         />
       </div>
+
       <div className="grid grid-cols-4 gap-4 mt-8 px-6">
         {imageUrls.map((imageUrl) => (
           <button
