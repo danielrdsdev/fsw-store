@@ -9,7 +9,7 @@ import { UserNav } from './user-nav'
 
 export const Header = () => {
   return (
-    <header className="h-20 border-b px-6 lg:px-32 flex items-center justify-between">
+    <header className="h-20 border-b px-6 lg:px-32 flex items-center justify-between sticky top-0 bg-background z-50">
       <div className="lg:hidden">
         <Sheet>
           <SheetTrigger asChild>
@@ -22,7 +22,7 @@ export const Header = () => {
       </div>
 
       <Link href="/" className="font-bold text-lg text-violet-600">
-        FSW <span className="font-semibold text-primary">Store</span>
+        FSW <span className="font-semibold text-foreground">Store</span>
       </Link>
 
       <div className="hidden lg:flex items-center">
