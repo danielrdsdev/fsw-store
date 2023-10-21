@@ -1,8 +1,7 @@
-import { Badge } from '@/components/ui/badge'
 import { ProductWithTotalPrice } from '@/helpers/product'
-import { ArrowDown } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { DiscountBadge } from './discount-badge'
 
 type ProductItemProps = {
   product: ProductWithTotalPrice
@@ -13,10 +12,9 @@ export const ProductItem = ({ product }: ProductItemProps) => {
     <Link href={`/product/${product.slug}`} className="flex flex-col gap-4">
       <div className="rounded-lg bg-muted flex items-center justify-center relative h-[170px] w-full">
         {product.discountPercentage > 0 && (
-          <Badge className="absolute left-3 top-3 px-2 py-0.5">
-            <ArrowDown className="w-3 h-3" />
+          <DiscountBadge className="absolute left-3 top-3">
             {product.discountPercentage}%
-          </Badge>
+          </DiscountBadge>
         )}
 
         <Image
