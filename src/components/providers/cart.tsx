@@ -13,6 +13,7 @@ type ICartContext = {
   addProductToCart: (product: CartProduct) => void
   decreaseProductQuantity: (productId: string) => void
   increaseProductQuantity: (productId: string) => void
+  removeProductsFromCart: (productId: string) => void
 }
 
 export const CartContext = createContext<ICartContext>({
@@ -23,6 +24,7 @@ export const CartContext = createContext<ICartContext>({
   addProductToCart: () => {},
   decreaseProductQuantity: () => {},
   increaseProductQuantity: () => {},
+  removeProductsFromCart: () => {},
 })
 
 export default function CartProvider({
@@ -89,6 +91,12 @@ export default function CartProvider({
     )
   }
 
+  const removeProductsFromCart = (productId: string) => {
+    setProducts((prev) =>
+      prev.filter((cartProduct) => cartProduct.id !== productId),
+    )
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -96,6 +104,7 @@ export default function CartProvider({
         addProductToCart,
         decreaseProductQuantity,
         increaseProductQuantity,
+        removeProductsFromCart,
         cartTotalPrice: 0,
         cartBasePrice: 0,
         cartTotalDiscount: 0,
