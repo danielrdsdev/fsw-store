@@ -1,8 +1,5 @@
 import { Cart } from '@/components/shared/cart'
-import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { NAV } from '@/constants/nav'
-import { Menu, ShoppingCart } from 'lucide-react'
 import Link from 'next/link'
 import { MobileNav } from './mobile-nav'
 import { NavLink } from './nav-link'
@@ -11,18 +8,7 @@ import { UserNav } from './user-nav'
 export const Header = () => {
   return (
     <header className="h-20 border-b px-6 lg:px-32 flex items-center justify-between sticky top-0 bg-background z-50">
-      <div className="lg:hidden">
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button size="icon" variant="outline">
-              <Menu className="w-5 h-5" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left">
-            <MobileNav />
-          </SheetContent>
-        </Sheet>
-      </div>
+      <MobileNav />
 
       <Link href="/" className="font-bold text-lg text-primary">
         FSW <span className="font-semibold text-foreground">Store</span>
@@ -38,16 +24,7 @@ export const Header = () => {
 
       <div className="flex items-center gap-4">
         <UserNav />
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button size="icon" variant="outline">
-              <ShoppingCart className="w-5 h-5" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent>
-            <Cart />
-          </SheetContent>
-        </Sheet>
+        <Cart />
       </div>
     </header>
   )
