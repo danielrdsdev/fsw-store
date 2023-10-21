@@ -23,14 +23,20 @@ export const Cart = () => {
         </Badge>
       </SheetHeader>
 
-      <div className="space-y-5">
-        {products.map((product) => (
-          <CartItem
-            key={product.id}
-            product={computeProductTotalPrice(product as any) as any}
-          />
-        ))}
-      </div>
+      {products.length === 0 ? (
+        <p className="text-center text-sm text-muted-foreground">
+          Seu carrinho está vazio.
+        </p>
+      ) : (
+        <div className="space-y-5">
+          {products.map((product) => (
+            <CartItem
+              key={product.id}
+              product={computeProductTotalPrice(product as any) as any}
+            />
+          ))}
+        </div>
+      )}
     </div>
   )
 }
