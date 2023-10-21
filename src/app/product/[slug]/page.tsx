@@ -1,4 +1,5 @@
 import { ProductList } from '@/components/shared/product-list'
+import { SectionTitle } from '@/components/shared/section-title'
 import { computeProductTotalPrice } from '@/helpers/product'
 import { prismaClient } from '@/lib/prisma'
 import { ProductImages } from './components/product-images'
@@ -37,12 +38,13 @@ export default async function ProductDetailsPage({
   }
 
   return (
-    <div className="space-y-8 pb-16">
+    <main className="space-y-8 pb-16">
       <ProductImages imageUrls={product.imageUrls} name={product.name} />
       <ProductInfo product={computeProductTotalPrice(product)} />
-      <div className="px-6">
+      <div className="px-6 space-y-4">
+        <SectionTitle>Produtos recomendados</SectionTitle>
         <ProductList products={product.category.products} />
       </div>
-    </div>
+    </main>
   )
 }

@@ -27,7 +27,7 @@ export const ProductInfo = ({
   }
 
   return (
-    <div className="px-6">
+    <section className="px-6">
       <h2 className="text-lg">{name}</h2>
 
       <div className="flex items-center gap-2">
@@ -95,6 +95,6 @@ export const ProductInfo = ({
 
         <p className="font-bold text-xs">Frete Grátis</p>
       </div>
-    </div>
+    </section>
   )
 }

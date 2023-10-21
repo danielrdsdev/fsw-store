@@ -15,7 +15,7 @@ export const ProductImages = ({ imageUrls, name }: ProductImagesProps) => {
     setCurrentImage(imageUrl)
   }
   return (
-    <div className="flex flex-col">
+    <section className="flex flex-col">
       <div className="bg-muted h-[380px] w-full items-center flex justify-center">
         <Image
           src={currentImage}
@@ -46,6 +46,6 @@ export const ProductImages = ({ imageUrls, name }: ProductImagesProps) => {
           </button>
         ))}
       </div>
-    </div>
+    </section>
   )
 }
