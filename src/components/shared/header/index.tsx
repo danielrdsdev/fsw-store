@@ -21,7 +21,7 @@ export const Header = () => {
         </Sheet>
       </div>
 
-      <Link href="/" className="font-bold text-lg text-violet-600">
+      <Link href="/" className="font-bold text-lg text-primary">
         FSW <span className="font-semibold text-foreground">Store</span>
       </Link>
 

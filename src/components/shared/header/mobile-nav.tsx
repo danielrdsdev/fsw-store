@@ -25,12 +25,14 @@ export const MobileNav = () => {
       </SheetHeader>
       <div className="mt-6 space-y-4">
         {status === 'unauthenticated' ? (
-          <Button asChild variant="outline" className="w-full justify-start">
-            <Link href="/login">
-              <LogIn className="w-4 h-4 mr-2" />
-              Fazer login
-            </Link>
-          </Button>
+          <SheetClose asChild>
+            <Button asChild variant="outline" className="w-full justify-start">
+              <Link href="/login">
+                <LogIn className="w-4 h-4 mr-2" />
+                Fazer login
+              </Link>
+            </Button>
+          </SheetClose>
         ) : (
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-4">
