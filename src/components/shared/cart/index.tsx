@@ -1,5 +1,6 @@
 'use client'
 
+import { createCheckout } from '@/actions/checkout'
 import { CartContext } from '@/components/providers/cart'
 import { MainButton } from '@/components/shared/main-button'
 import { Badge } from '@/components/ui/badge'
@@ -13,12 +14,23 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet'
 import { computeProductTotalPrice } from '@/helpers/product'
+import { loadStripe } from '@stripe/stripe-js'
 import { ShoppingCart } from 'lucide-react'
 import { useContext } from 'react'
 import { CartItem } from './cart-item'
 
 export const Cart = () => {
   const { products, subTotal, total, totalDiscount } = useContext(CartContext)
+
+  const handleFinishPurchaseClick = async () => {
+    const checkout = await createCheckout(products)
+
+    const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY)
+
+    stripe?.redirectToCheckout({
+      sessionId: checkout.id,
+    })
+  }
 
   return (
     <Sheet>
@@ -82,7 +94,9 @@ export const Cart = () => {
               </div>
             </div>
 
-            <MainButton>Finalizar compra</MainButton>
+            <MainButton onClick={handleFinishPurchaseClick}>
+              Finalizar compra
+            </MainButton>
           </div>
         )}
       </SheetContent>
