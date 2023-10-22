@@ -13,10 +13,9 @@ export const CategoryItem = ({ category }: CategoryItemProps) => {
         <Image
           src={category.imageUrl}
           alt={category.name}
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="h-auto w-auto max-h-[70%] max-w-[80%] object-contain"
+          width={155}
+          height={82}
+          className="object-contain"
         />
       </div>
 
