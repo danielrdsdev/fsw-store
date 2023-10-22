@@ -2,6 +2,7 @@
 
 import { CartContext } from '@/components/providers/cart'
 import { DiscountBadge } from '@/components/shared/discount-badge'
+import { MainButton } from '@/components/shared/main-button'
 import { Button } from '@/components/ui/button'
 import { toast } from '@/components/ui/use-toast'
 import { ProductWithTotalPrice } from '@/helpers/product'
@@ -80,12 +81,9 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
         <p className="text-sm text-muted-foreground">{product.description}</p>
       </div>
 
-      <Button
-        onClick={handleAddToCartClick}
-        className="mt-8 uppercase w-full font-bold"
-      >
+      <MainButton onClick={handleAddToCartClick} className="mt-8">
         Adicionar ao carrinho
-      </Button>
+      </MainButton>
 
       <div className="bg-muted flex items-center w-full justify-between px-6 py-3 rounded-lg mt-5">
         <div className="flex items-center gap-3">
