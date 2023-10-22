@@ -38,10 +38,12 @@ export default async function ProductDetailsPage({
   }
 
   return (
-    <main className="space-y-8 pb-16">
-      <ProductImages imageUrls={product.imageUrls} name={product.name} />
-      <ProductInfo product={computeProductTotalPrice(product)} />
-      <div className="px-6 space-y-4">
+    <main className="space-y-8 pb-16 lg:container lg:py-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-full">
+        <ProductImages imageUrls={product.imageUrls} name={product.name} />
+        <ProductInfo product={computeProductTotalPrice(product)} />
+      </div>
+      <div className="px-6 space-y-4 lg:p-0">
         <SectionTitle>Produtos recomendados</SectionTitle>
         <ProductList products={product.category.products} />
       </div>

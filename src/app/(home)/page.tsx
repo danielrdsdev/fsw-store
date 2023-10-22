@@ -59,7 +59,7 @@ export default async function Home() {
           className="lg:hidden"
         />
 
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:grid grid-cols-2 gap-8">
           <PromoBanner
             src="/banner-home-02-desktop.png"
             alt="Até 55% de desconto em mouses"

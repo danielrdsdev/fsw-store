@@ -74,6 +74,7 @@ export const Cart = () => {
           <div className="space-y-8 mt-auto">
             <div className="space-y-3">
               <Separator />
+
               <div className="flex items-center justify-between text-xs">
                 <p>Subtotal</p>
                 <p>R$ {subTotal.toFixed(2)}</p>

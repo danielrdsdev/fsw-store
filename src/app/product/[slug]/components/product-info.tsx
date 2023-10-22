@@ -31,11 +31,12 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
     toast({
       title: 'Produto adicionado ao carrinho',
       description: `${product.name} foi adicionado ao carrinho.`,
+      duration: 3000,
     })
   }
 
   return (
-    <section className="px-6">
+    <section className="px-6 lg:p-10 lg:bg-muted lg:rounded-lg">
       <h2 className="text-lg">{product.name}</h2>
 
       <div className="flex items-center gap-2">
@@ -85,7 +86,7 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
         Adicionar ao carrinho
       </MainButton>
 
-      <div className="bg-muted flex items-center w-full justify-between px-6 py-3 rounded-lg mt-5">
+      <div className="bg-[#2A2A2A] flex items-center w-full justify-between px-6 py-3 rounded-lg mt-5">
         <div className="flex items-center gap-3">
           <Truck className="w-10 h-10" />
 
