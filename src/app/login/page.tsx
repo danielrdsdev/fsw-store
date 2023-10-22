@@ -9,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { toast } from '@/components/ui/use-toast'
 import { signIn, useSession } from 'next-auth/react'
 import { redirect } from 'next/navigation'
 
@@ -19,6 +20,14 @@ export default function LoginPage() {
     redirect('/')
   }
 
+  const handleLoginClick = (provider: string) => {
+    signIn(provider)
+    toast({
+      title: 'Login feito com sucesso!',
+      description: 'Você será redirecionado em instantes',
+    })
+  }
+
   return (
     <Card className="w-full max-w-md">
       <CardHeader>
@@ -27,12 +36,13 @@ export default function LoginPage() {
           Faça login com a sua conta Google ou GitHub
         </CardDescription>
       </CardHeader>
+
       <CardContent className="grid grid-cols-2 gap-4">
-        <Button onClick={() => signIn('google')} variant="outline">
+        <Button onClick={() => handleLoginClick('google')} variant="outline">
           <Icons.google className="w-6 h-6 mr-2" />
           Google
         </Button>
-        <Button onClick={() => signIn('github')} variant="outline">
+        <Button onClick={() => handleLoginClick('github')} variant="outline">
           <Icons.github className="w-6 h-6 mr-2" />
           GitHub
         </Button>
