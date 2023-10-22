@@ -1,6 +1,6 @@
-import Providers from '@/components/providers'
 import '../styles/globals.css'
 
+import Providers from '@/components/providers'
 import { Footer } from '@/components/shared/footer'
 import { Header } from '@/components/shared/header'
 import { cn } from '@/lib/utils'
