@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="pt" suppressHydrationWarning>
       <body className={cn(fontSans.variable)}>
         <Providers>
           <div className="flex flex-col min-h-full">
