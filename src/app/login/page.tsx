@@ -29,24 +29,26 @@ export default function LoginPage() {
   }
 
   return (
-    <Card className="w-full max-w-md">
-      <CardHeader>
-        <CardTitle>Login</CardTitle>
-        <CardDescription>
-          Faça login com a sua conta Google ou GitHub
-        </CardDescription>
-      </CardHeader>
+    <main className="flex items-center justify-center pt-56 pb-16">
+      <Card className="w-full max-w-md">
+        <CardHeader>
+          <CardTitle>Login</CardTitle>
+          <CardDescription>
+            Faça login com a sua conta Google ou GitHub
+          </CardDescription>
+        </CardHeader>
 
-      <CardContent className="grid grid-cols-2 gap-4">
-        <Button onClick={() => handleLoginClick('google')} variant="outline">
-          <Icons.google className="w-6 h-6 mr-2" />
-          Google
-        </Button>
-        <Button onClick={() => handleLoginClick('github')} variant="outline">
-          <Icons.github className="w-6 h-6 mr-2" />
-          GitHub
-        </Button>
-      </CardContent>
-    </Card>
+        <CardContent className="grid grid-cols-2 gap-4">
+          <Button onClick={() => handleLoginClick('google')} variant="outline">
+            <Icons.google className="w-6 h-6 mr-2" />
+            Google
+          </Button>
+          <Button onClick={() => handleLoginClick('github')} variant="outline">
+            <Icons.github className="w-6 h-6 mr-2" />
+            GitHub
+          </Button>
+        </CardContent>
+      </Card>
+    </main>
   )
 }

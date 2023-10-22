@@ -1,22 +1,24 @@
-import { ProductWithTotalPrice } from '@/helpers/product'
-import { createContext, useEffect, useMemo, useState } from 'react'
+'use client'
 
-export type CartProduct = ProductWithTotalPrice & {
+import { ProductWithTotalPrice } from '@/helpers/product'
+import { ReactNode, createContext, useEffect, useMemo, useState } from 'react'
+
+export interface CartProduct extends ProductWithTotalPrice {
   quantity: number
 }
 
-type ICartContext = {
+interface ICartContext {
   products: CartProduct[]
   cartTotalPrice: number
   cartBasePrice: number
   cartTotalDiscount: number
   total: number
-  subTotal: number
+  subtotal: number
   totalDiscount: number
   addProductToCart: (product: CartProduct) => void
   decreaseProductQuantity: (productId: string) => void
   increaseProductQuantity: (productId: string) => void
-  removeProductsFromCart: (productId: string) => void
+  removeProductFromCart: (productId: string) => void
 }
 
 export const CartContext = createContext<ICartContext>({
@@ -25,19 +27,15 @@ export const CartContext = createContext<ICartContext>({
   cartBasePrice: 0,
   cartTotalDiscount: 0,
   total: 0,
-  subTotal: 0,
+  subtotal: 0,
   totalDiscount: 0,
   addProductToCart: () => {},
   decreaseProductQuantity: () => {},
   increaseProductQuantity: () => {},
-  removeProductsFromCart: () => {},
+  removeProductFromCart: () => {},
 })
 
-export default function CartProvider({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+const CartProvider = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<CartProduct[]>(
     JSON.parse(localStorage.getItem('@fsw-store/cart-products') || '[]'),
   )
@@ -47,22 +45,23 @@ export default function CartProvider({
   }, [products])
 
   // Total sem descontos
-  const subTotal = useMemo(() => {
+  const subtotal = useMemo(() => {
     return products.reduce((acc, product) => {
       return acc + Number(product.basePrice) * product.quantity
     }, 0)
   }, [products])
 
-  // total com descontos
+  // Total com descontos
   const total = useMemo(() => {
     return products.reduce((acc, product) => {
       return acc + product.totalPrice * product.quantity
     }, 0)
   }, [products])
 
-  const totalDiscount = subTotal - total
+  const totalDiscount = subtotal - total
 
   const addProductToCart = (product: CartProduct) => {
+    // se o produto já estiver no carrinho, apenas aumente a sua quantidade
     const productIsAlreadyOnCart = products.some(
       (cartProduct) => cartProduct.id === product.id,
     )
@@ -84,6 +83,7 @@ export default function CartProvider({
       return
     }
 
+    // se não, adicione o produto à lista
     setProducts((prev) => [...prev, product])
   }
 
@@ -119,7 +119,7 @@ export default function CartProvider({
     )
   }
 
-  const removeProductsFromCart = (productId: string) => {
+  const removeProductFromCart = (productId: string) => {
     setProducts((prev) =>
       prev.filter((cartProduct) => cartProduct.id !== productId),
     )
@@ -132,9 +132,9 @@ export default function CartProvider({
         addProductToCart,
         decreaseProductQuantity,
         increaseProductQuantity,
-        removeProductsFromCart,
+        removeProductFromCart,
         total,
-        subTotal,
+        subtotal,
         totalDiscount,
         cartTotalPrice: 0,
         cartBasePrice: 0,
@@ -145,3 +145,5 @@ export default function CartProvider({
     </CartContext.Provider>
   )
 }
+
+export default CartProvider

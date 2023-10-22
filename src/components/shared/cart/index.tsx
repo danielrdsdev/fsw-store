@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
 import { createCheckout } from '@/actions/checkout'
@@ -20,7 +21,7 @@ import { useContext } from 'react'
 import { CartItem } from './cart-item'
 
 export const Cart = () => {
-  const { products, subTotal, total, totalDiscount } = useContext(CartContext)
+  const { products, subtotal, total, totalDiscount } = useContext(CartContext)
 
   const handleFinishPurchaseClick = async () => {
     const checkout = await createCheckout(products)
@@ -76,8 +77,8 @@ export const Cart = () => {
               <Separator />
 
               <div className="flex items-center justify-between text-xs">
-                <p>Subtotal</p>
-                <p>R$ {subTotal.toFixed(2)}</p>
+                <p>Sub Total</p>
+                <p>R$ {subtotal.toFixed(2)}</p>
               </div>
 
               <Separator />
