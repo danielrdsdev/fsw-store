@@ -20,7 +20,10 @@ export const Cart = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button size="icon" variant="outline">
+        <Button size="icon" variant="outline" className="relative">
+          <Badge className="absolute -right-2 -top-2 p-0 flex items-center justify-center w-5 h-5 font-normal">
+            {products.length}
+          </Badge>
           <ShoppingCart className="w-5 h-5" />
         </Button>
       </SheetTrigger>
