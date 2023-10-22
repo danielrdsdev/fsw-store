@@ -39,6 +39,7 @@ export const ProductImages = ({ imageUrls, name }: ProductImagesProps) => {
               src={imageUrl}
               alt={name}
               fill
+              sizes="100%"
               className="object-contain p-3"
             />
           </button>

@@ -3,6 +3,10 @@ import { prismaClient } from '@/lib/prisma'
 import { Shapes } from 'lucide-react'
 import { CategoryItem } from './components/category-item'
 
+export const metadata = {
+  title: 'Catálogo',
+}
+
 export default async function CatalogPage() {
   const categories = await prismaClient.category.findMany()
 

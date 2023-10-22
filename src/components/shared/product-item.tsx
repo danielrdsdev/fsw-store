@@ -21,6 +21,7 @@ export const ProductItem = ({ product }: ProductItemProps) => {
           src={product.imageUrls[0]}
           alt={product.name}
           fill
+          sizes="100%"
           className="object-contain p-3"
         />
       </div>

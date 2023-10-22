@@ -4,6 +4,10 @@ import { computeProductTotalPrice } from '@/helpers/product'
 import { prismaClient } from '@/lib/prisma'
 import { Percent } from 'lucide-react'
 
+export const metadata = {
+  title: 'Ofertas',
+}
+
 export default async function DealsPage() {
   const deals = await prismaClient.product.findMany({
     where: {
