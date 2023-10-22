@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function LoginPage() {
   return (
-    <main className="flex items-center justify-center pt-56 pb-16">
+    <main className="flex items-center justify-center pt-56 pb-16 px-6">
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle>Login</CardTitle>

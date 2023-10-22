@@ -30,14 +30,13 @@ export const CartItem = ({ product }: CartItemProps) => {
   return (
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-4">
-        <div className="bg-muted rounded-lg flex items-center justify-center h-[77px] w-[77px]">
+        <div className="relative h-[77px] w-[77px] bg-muted rounded-lg flex items-center justify-center">
           <Image
             src={product.imageUrls[0]}
             alt={product.name}
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="w-auto h-auto max-w-[80%] max-h-[70%]"
+            fill
+            sizes="100%"
+            className="p-3 object-contain"
           />
         </div>
 

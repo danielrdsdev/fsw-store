@@ -42,7 +42,7 @@ export const Cart = () => {
           <ShoppingCart className="w-5 h-5" />
         </Button>
       </SheetTrigger>
-      <SheetContent className="flex flex-col">
+      <SheetContent className="flex flex-col w-96">
         <SheetHeader className="mb-5">
           <Badge
             variant="outline"
