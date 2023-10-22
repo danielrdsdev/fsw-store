@@ -15,14 +15,17 @@ import {
 } from '@/components/ui/sheet'
 import { computeProductTotalPrice } from '@/helpers/product'
 import { loadStripe } from '@stripe/stripe-js'
-import { ShoppingCart } from 'lucide-react'
-import { useContext } from 'react'
+import { Loader2, ShoppingCart } from 'lucide-react'
+import { useContext, useState } from 'react'
 import { CartItem } from './cart-item'
 
 export const Cart = () => {
   const { products, subtotal, total, totalDiscount } = useContext(CartContext)
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleFinishPurchaseClick = async () => {
+    setIsLoading(true)
+
     const checkout = await createCheckout(products)
 
     const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY)
@@ -95,8 +98,18 @@ export const Cart = () => {
               </div>
             </div>
 
-            <MainButton onClick={handleFinishPurchaseClick}>
-              Finalizar compra
+            <MainButton
+              onClick={handleFinishPurchaseClick}
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <>
+                  <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                  <span>Processando...</span>
+                </>
+              ) : (
+                <span>Finalizar compra</span>
+              )}
             </MainButton>
           </div>
         )}
