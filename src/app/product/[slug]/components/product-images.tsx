@@ -23,7 +23,7 @@ export const ProductImages = ({ imageUrls, name }: ProductImagesProps) => {
           width={0}
           height={0}
           sizes="100vw"
-          className="h-auto max-h-[70%] w-auto max-w-[80%] object-contain"
+          className="max-h-[385px] max-w-[90%] w-auto h-auto object-contain"
         />
       </div>
 
@@ -33,15 +33,13 @@ export const ProductImages = ({ imageUrls, name }: ProductImagesProps) => {
             onClick={() => handleImageClick(imageUrl)}
             key={imageUrl}
             data-active={imageUrl === currentImage}
-            className="bg-muted lg:bg-[#0B0B0B] rounded-lg lg:rounded-xl border-2 border-transparent flex items-center justify-center data-[active=true]:border-primary data-[active=true]:border-2"
+            className="relative w-[77px] h-[77px] bg-muted lg:bg-[#0B0B0B] rounded-lg lg:rounded-xl border-2 border-transparent flex items-center justify-center data-[active=true]:border-primary data-[active=true]:border-2"
           >
             <Image
               src={imageUrl}
               alt={name}
-              width={0}
-              height={0}
-              sizes="100vw"
-              className="h-auto max-h-[70%] w-auto max-w-[80%] lg:w-[60px] lg:h-[60px] object-contain"
+              fill
+              className="object-contain p-3"
             />
           </button>
         ))}

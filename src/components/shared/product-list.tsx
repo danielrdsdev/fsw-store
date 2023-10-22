@@ -8,7 +8,7 @@ type ProductListProps = {
 
 export const ProductList = ({ products }: ProductListProps) => {
   return (
-    <div className="items-center overflow-x-auto flex w-full gap-4 [&::-webkit-scrollbar]:hidden">
+    <div className="items-center overflow-x-auto flex w-full gap-8 [&::-webkit-scrollbar]:hidden">
       {products.map((product) => (
         <ProductItem
           key={product.id}

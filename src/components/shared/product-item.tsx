@@ -10,20 +10,18 @@ type ProductItemProps = {
 export const ProductItem = ({ product }: ProductItemProps) => {
   return (
     <Link href={`/product/${product.slug}`} className="flex flex-col gap-4">
-      <div className="rounded-lg bg-muted flex items-center justify-center relative h-[170px] w-full">
+      <div className="relative h-[190px] min-w-[180px] max-w-full rounded-lg bg-muted flex items-center justify-center">
         {product.discountPercentage > 0 && (
-          <DiscountBadge className="absolute left-3 top-3">
+          <DiscountBadge className="absolute left-3 top-3 z-10">
             {product.discountPercentage}%
           </DiscountBadge>
         )}
 
         <Image
           src={product.imageUrls[0]}
-          width={0}
-          height={0}
-          className="h-auto w-full object-contain max-h-[70%] max-w-[80%]"
-          sizes="100vw"
           alt={product.name}
+          fill
+          className="object-contain p-3"
         />
       </div>
 
