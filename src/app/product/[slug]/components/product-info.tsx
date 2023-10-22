@@ -3,6 +3,7 @@
 import { CartContext } from '@/components/providers/cart'
 import { DiscountBadge } from '@/components/shared/discount-badge'
 import { Button } from '@/components/ui/button'
+import { toast } from '@/components/ui/use-toast'
 import { ProductWithTotalPrice } from '@/helpers/product'
 import { Minus, Plus, Truck } from 'lucide-react'
 import { useContext, useState } from 'react'
@@ -26,6 +27,10 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
 
   const handleAddToCartClick = () => {
     addProductToCart({ ...product, quantity })
+    toast({
+      title: 'Produto adicionado ao carrinho',
+      description: `${product.name} foi adicionado ao carrinho.`,
+    })
   }
 
   return (
