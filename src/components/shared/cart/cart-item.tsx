@@ -33,25 +33,28 @@ export const CartItem = ({ product }: CartItemProps) => {
         <div className="bg-muted rounded-lg flex items-center justify-center h-[77px] w-[77px]">
           <Image
             src={product.imageUrls[0]}
-            alt="..."
+            alt={product.name}
             width={0}
             height={0}
             sizes="100vw"
             className="w-auto h-auto max-w-[80%] max-h-[70%]"
           />
         </div>
-        <div className="flex flex-col">
-          <p className="text-xs">{product.name}</p>
 
-          <div className="flex items-center gap-2">
-            <p className="font-bold text-sm">
-              R$ {product.totalPrice.toFixed(2)}
-            </p>
-            {product.discountPercentage > 0 && (
-              <p className="text-xs text-muted-foreground line-through">
-                R$ {Number(product.basePrice).toFixed(2)}
+        <div className="flex flex-col gap-2">
+          <div className="space-y-1">
+            <p className="text-xs">{product.name}</p>
+
+            <div className="flex items-center gap-2">
+              <p className="font-bold text-sm">
+                R$ {product.totalPrice.toFixed(2)}
               </p>
-            )}
+              {product.discountPercentage > 0 && (
+                <p className="text-xs text-muted-foreground line-through">
+                  R$ {Number(product.basePrice).toFixed(2)}
+                </p>
+              )}
+            </div>
           </div>
 
           <div className="flex items-center">

@@ -4,6 +4,7 @@ import { CartContext } from '@/components/providers/cart'
 import { MainButton } from '@/components/shared/main-button'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { ScrollArea } from '@/components/ui/scroll-area'
 import { Separator } from '@/components/ui/separator'
 import {
   Sheet,
@@ -40,40 +41,45 @@ export const Cart = () => {
           </Badge>
         </SheetHeader>
 
-        <div className="space-y-5">
-          {products.length > 0 ? (
-            products.map((product) => (
-              <CartItem
-                key={product.id}
-                product={computeProductTotalPrice(product as any) as any}
-              />
-            ))
-          ) : (
-            <p className="text-center text-sm text-muted-foreground font-medium">
-              Seu carrinho está vazio.
-            </p>
-          )}
-        </div>
+        <ScrollArea>
+          <div className="space-y-5 h-full pr-4">
+            {products.length > 0 ? (
+              products.map((product) => (
+                <CartItem
+                  key={product.id}
+                  product={computeProductTotalPrice(product as any) as any}
+                />
+              ))
+            ) : (
+              <p className="text-center text-sm text-muted-foreground font-medium">
+                Seu carrinho está vazio.
+              </p>
+            )}
+          </div>
+        </ScrollArea>
+
         {products.length > 0 && (
-          <div className="space-y-3 mt-auto">
-            <Separator />
-            <div className="flex items-center justify-between text-xs">
-              <p>Subtotal</p>
-              <p>R$ {subTotal.toFixed(2)}</p>
-            </div>
+          <div className="space-y-8 mt-auto">
+            <div className="space-y-3">
+              <Separator />
+              <div className="flex items-center justify-between text-xs">
+                <p>Subtotal</p>
+                <p>R$ {subTotal.toFixed(2)}</p>
+              </div>
 
-            <Separator />
+              <Separator />
 
-            <div className="flex items-center justify-between text-xs">
-              <p>Descontos</p>
-              <p>- R$ {totalDiscount.toFixed(2)}</p>
-            </div>
+              <div className="flex items-center justify-between text-xs">
+                <p>Descontos</p>
+                <p>- R$ {totalDiscount.toFixed(2)}</p>
+              </div>
 
-            <Separator />
+              <Separator />
 
-            <div className="flex items-center justify-between font-bold text-sm">
-              <p>Total</p>
-              <p>R$ {total.toFixed(2)}</p>
+              <div className="flex items-center justify-between font-bold text-sm">
+                <p>Total</p>
+                <p>R$ {total.toFixed(2)}</p>
+              </div>
             </div>
 
             <MainButton>Finalizar compra</MainButton>
