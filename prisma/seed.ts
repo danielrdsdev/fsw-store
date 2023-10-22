@@ -99,7 +99,8 @@ async function main() {
       data: {
         name: 'Teclados',
         slug: 'keyboards',
-        imageUrl: 'https://fsw-store.s3.sa-east-1.amazonaws.com/keyboards.png',
+        imageUrl:
+          'https://utfs.io/f/bebd6fe5-ca55-48de-ae94-6d7ddc85ff0a-pv4uj8.png',
       },
     })
 
