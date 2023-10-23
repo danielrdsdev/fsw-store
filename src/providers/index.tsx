@@ -1,6 +1,7 @@
 'use client'
 
 import { Toaster } from '@/components/ui/toaster'
+import { Analytics } from '@vercel/analytics/react'
 import { SessionProvider } from 'next-auth/react'
 import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import * as React from 'react'
@@ -17,6 +18,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       <CartProvider>
         <SessionProvider>
           {children}
+          <Analytics />
           <Toaster />
         </SessionProvider>
       </CartProvider>
