@@ -1,12 +1,13 @@
 'use client'
 
 import { DiscountBadge } from '@/components/shared/discount-badge'
+import { Icons } from '@/components/shared/icons'
 import { MainButton } from '@/components/shared/main-button'
 import { Button } from '@/components/ui/button'
 import { toast } from '@/components/ui/use-toast'
 import { ProductWithTotalPrice } from '@/helpers/product'
 import { CartContext } from '@/providers/cart'
-import { Minus, Plus, Truck } from 'lucide-react'
+import { Minus, Plus } from 'lucide-react'
 import { useSession } from 'next-auth/react'
 import { useContext, useState } from 'react'
 
@@ -97,7 +98,7 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
 
       <div className="bg-[#2A2A2A] flex items-center w-full justify-between px-6 py-3 rounded-lg mt-5">
         <div className="flex items-center gap-3">
-          <Truck className="w-10 h-10" />
+          <Icons.truck />
 
           <div className="flex flex-col gap-1">
             <p className="text-sm">
