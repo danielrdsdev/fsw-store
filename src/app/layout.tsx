@@ -1,9 +1,9 @@
 import '../styles/globals.css'
 
-import Providers from '@/components/providers'
 import { Footer } from '@/components/shared/footer'
 import { Header } from '@/components/shared/header'
 import { cn } from '@/lib/utils'
+import Providers from '@/providers'
 import { fontSans } from '@/styles/fonts'
 import type { Metadata } from 'next'
 

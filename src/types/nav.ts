@@ -1,6 +1,6 @@
 import { LucideIcon } from 'lucide-react'
 
-export type NAV = {
+export type NavProps = {
   name: string
   path: string
   icon?: LucideIcon

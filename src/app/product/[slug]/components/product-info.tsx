@@ -1,11 +1,11 @@
 'use client'
 
-import { CartContext } from '@/components/providers/cart'
 import { DiscountBadge } from '@/components/shared/discount-badge'
 import { MainButton } from '@/components/shared/main-button'
 import { Button } from '@/components/ui/button'
 import { toast } from '@/components/ui/use-toast'
 import { ProductWithTotalPrice } from '@/helpers/product'
+import { CartContext } from '@/providers/cart'
 import { Minus, Plus, Truck } from 'lucide-react'
 import { useContext, useState } from 'react'
 

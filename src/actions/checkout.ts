@@ -1,6 +1,6 @@
 'use server'
 
-import { CartProduct } from '@/components/providers/cart'
+import { CartProduct } from '@/providers/cart'
 import Stripe from 'stripe'
 
 export const createCheckout = async (products: CartProduct[]) => {

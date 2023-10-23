@@ -1,5 +1,5 @@
-import { CartContext, CartProduct } from '@/components/providers/cart'
 import { Button } from '@/components/ui/button'
+import { CartContext, CartProduct } from '@/providers/cart'
 import { Minus, Plus, Trash } from 'lucide-react'
 import Image from 'next/image'
 import { useContext } from 'react'

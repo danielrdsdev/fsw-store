@@ -1,7 +1,6 @@
 'use client'
 
 import { createCheckout } from '@/actions/checkout'
-import { CartContext } from '@/components/providers/cart'
 import { MainButton } from '@/components/shared/main-button'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -14,6 +13,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet'
 import { computeProductTotalPrice } from '@/helpers/product'
+import { CartContext } from '@/providers/cart'
 import { loadStripe } from '@stripe/stripe-js'
 import { Loader2, ShoppingCart } from 'lucide-react'
 import { useContext, useState } from 'react'
