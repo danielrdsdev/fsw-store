@@ -1,5 +1,5 @@
 import { ProductList } from '@/components/shared/product-list'
-import { SectionTitle } from '@/components/shared/section-title'
+import { SectionLink } from '@/components/shared/section-link'
 import { prismaClient } from '@/lib/prisma'
 import { Categories } from './components/categories'
 import { PromoBanner } from './components/promo-banner'
@@ -48,7 +48,7 @@ export default async function Home() {
       </section>
 
       <section className="space-y-4 container">
-        <SectionTitle>Ofertas</SectionTitle>
+        <SectionLink href="/deals">Ofertas</SectionLink>
         <ProductList products={deals} />
       </section>
 
@@ -72,7 +72,7 @@ export default async function Home() {
       </section>
 
       <section className="space-y-4 container">
-        <SectionTitle>Teclados</SectionTitle>
+        <SectionLink href="/category/keyboards">Teclados</SectionLink>
         <ProductList products={keyboards} />
       </section>
 
@@ -90,7 +90,7 @@ export default async function Home() {
       </section>
 
       <section className="space-y-4 container">
-        <SectionTitle>Mouses</SectionTitle>
+        <SectionLink href="/category/mouses">Mouses</SectionLink>
         <ProductList products={mouses} />
       </section>
     </main>
