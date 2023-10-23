@@ -7,6 +7,7 @@ import { toast } from '@/components/ui/use-toast'
 import { ProductWithTotalPrice } from '@/helpers/product'
 import { CartContext } from '@/providers/cart'
 import { Minus, Plus, Truck } from 'lucide-react'
+import { useSession } from 'next-auth/react'
 import { useContext, useState } from 'react'
 
 type ProductInfoProps = {
@@ -14,6 +15,8 @@ type ProductInfoProps = {
 }
 
 export const ProductInfo = ({ product }: ProductInfoProps) => {
+  const { status } = useSession()
+
   const [quantity, setQuantity] = useState(1)
 
   const { addProductToCart } = useContext(CartContext)
@@ -82,8 +85,14 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
         <p className="text-sm text-muted-foreground">{product.description}</p>
       </div>
 
-      <MainButton onClick={handleAddToCartClick} className="mt-8">
-        Adicionar ao carrinho
+      <MainButton
+        onClick={handleAddToCartClick}
+        disabled={status === 'unauthenticated'}
+        className="mt-8"
+      >
+        {status === 'unauthenticated'
+          ? 'Faça login para continuar'
+          : 'Adicionar ao carrinho'}
       </MainButton>
 
       <div className="bg-[#2A2A2A] flex items-center w-full justify-between px-6 py-3 rounded-lg mt-5">
