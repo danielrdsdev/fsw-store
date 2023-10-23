@@ -76,4 +76,10 @@
   html {
     @apply h-full;
   }
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
 }
