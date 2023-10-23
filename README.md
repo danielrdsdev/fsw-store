@@ -1,6 +1,6 @@
 # Projeto FSW Store 💻
 
-Projeto feito durante o evento Full Stack Week do [Felipe Rocha](https://www.youtube.com/@dicasparadevs). Nele fizemos um projeto e-commerce, utilizando as tecnologias mais modernas e demandadas pelo mercado.
+Projeto feito durante o evento Full Stack Week do [Felipe Rocha](https://www.youtube.com/@dicasparadevs). Nele fizemos um projeto e-commerce utilizando as tecnologias mais modernas e demandadas pelo mercado.
 
 &nbsp;
 
