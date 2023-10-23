@@ -7,7 +7,7 @@ import { UserNav } from './user-nav'
 
 export const Header = () => {
   return (
-    <header className="h-20 border-b px-6 lg:px-32 flex items-center justify-between sticky top-0 bg-background z-50">
+    <header className="h-20 border-b px-6 lg:px-32 flex items-center justify-between">
       <MobileNav />
 
       <Link href="/" className="font-bold text-lg text-primary">

@@ -1,5 +1,6 @@
 'use client'
 
+import { BackToTop } from '@/components/shared/back-to-top'
 import { Toaster } from '@/components/ui/toaster'
 import { Analytics } from '@vercel/analytics/react'
 import { SessionProvider } from 'next-auth/react'
@@ -20,6 +21,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
           {children}
           <Analytics />
           <Toaster />
+          <BackToTop />
         </SessionProvider>
       </CartProvider>
     </NextThemesProvider>
