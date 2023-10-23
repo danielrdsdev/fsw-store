@@ -36,7 +36,7 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
   }
 
   return (
-    <section className="px-6 lg:p-10 lg:bg-muted lg:rounded-lg">
+    <section className="lg:p-10 lg:bg-muted lg:rounded-lg">
       <h2 className="text-lg">{product.name}</h2>
 
       <div className="flex items-center gap-2">
