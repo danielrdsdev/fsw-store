@@ -1,4 +1,4 @@
-import { Cart } from '@/components/shared/cart'
+import { Cart } from '@/components/shared/header/cart'
 import { NAV } from '@/constants/nav'
 import Link from 'next/link'
 import { MobileNav } from './mobile-nav'

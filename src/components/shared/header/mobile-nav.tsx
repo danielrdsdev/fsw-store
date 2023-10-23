@@ -15,6 +15,7 @@ import { LogIn, LogOut, Menu } from 'lucide-react'
 import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { ModalLogin } from './modal-login'
 
 export const MobileNav = () => {
   const { data, status } = useSession()
@@ -36,16 +37,12 @@ export const MobileNav = () => {
           <div className="mt-6 space-y-4">
             {status === 'unauthenticated' ? (
               <SheetClose asChild>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="w-full justify-start"
-                >
-                  <Link href="/login">
+                <ModalLogin>
+                  <Button variant="outline" className="w-full justify-start">
                     <LogIn className="w-4 h-4 mr-2" />
                     Fazer login
-                  </Link>
-                </Button>
+                  </Button>
+                </ModalLogin>
               </SheetClose>
             ) : (
               <div className="flex flex-col gap-6">

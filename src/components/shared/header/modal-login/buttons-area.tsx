@@ -14,7 +14,7 @@ export const ButtonsArea = () => {
     signIn(provider)
   }
   return (
-    <>
+    <div className="grid grid-cols-2 gap-4">
       <Button
         onClick={() => handleLoginClick('google')}
         variant="outline"
@@ -40,6 +40,6 @@ export const ButtonsArea = () => {
         )}
         GitHub
       </Button>
-    </>
+    </div>
   )
 }
