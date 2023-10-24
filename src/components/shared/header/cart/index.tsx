@@ -1,6 +1,7 @@
 'use client'
 
 import { createCheckout } from '@/actions/checkout'
+import { createOrder } from '@/actions/order'
 import { MainButton } from '@/components/shared/main-button'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -21,12 +22,18 @@ import { useContext, useState } from 'react'
 import { CartItem } from './cart-item'
 
 export const Cart = () => {
+  const { data: session } = useSession()
   const { products, subtotal, total, totalDiscount } = useContext(CartContext)
   const [isLoading, setIsLoading] = useState(false)
-  const { data: session } = useSession()
 
   const handleFinishPurchaseClick = async () => {
+    if (!session) {
+      return
+    }
+
     setIsLoading(true)
+
+    await createOrder(products, (session as any).id)
 
     const checkout = await createCheckout(products)
 
