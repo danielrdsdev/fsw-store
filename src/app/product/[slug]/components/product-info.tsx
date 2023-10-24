@@ -16,7 +16,7 @@ type ProductInfoProps = {
 }
 
 export const ProductInfo = ({ product }: ProductInfoProps) => {
-  const { status } = useSession()
+  const { data: session, status } = useSession()
 
   const [quantity, setQuantity] = useState(1)
 
@@ -91,9 +91,7 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
         disabled={status === 'unauthenticated'}
         className="mt-8"
       >
-        {status === 'unauthenticated'
-          ? 'Faça login para continuar'
-          : 'Adicionar ao carrinho'}
+        {session ? 'Adicionar ao carrinho' : 'Faça login para continuar'}
       </MainButton>
 
       <div className="bg-[#2A2A2A] flex items-center w-full justify-between px-6 py-3 rounded-lg mt-5">

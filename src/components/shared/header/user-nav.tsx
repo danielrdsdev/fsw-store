@@ -17,7 +17,7 @@ import { signOut, useSession } from 'next-auth/react'
 import { ModalLogin } from './modal-login'
 
 export const UserNav = () => {
-  const { status, data } = useSession()
+  const { data: session, status } = useSession()
 
   return (
     <div className="hidden lg:block">
@@ -25,11 +25,7 @@ export const UserNav = () => {
         <Loader2 className="w-5 h-5 animate-spin" />
       ) : (
         <>
-          {status === 'unauthenticated' ? (
-            <ModalLogin>
-              <Button>Fazer login</Button>
-            </ModalLogin>
-          ) : (
+          {session ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="icon">
@@ -39,22 +35,22 @@ export const UserNav = () => {
               <DropdownMenuContent className="w-64" align="end" forceMount>
                 <DropdownMenuLabel className="font-normal flex items-center gap-2">
                   <Avatar className="h-8 w-8">
-                    {data?.user?.image && (
+                    {session.user?.image && (
                       <AvatarImage
-                        src={data.user.image}
+                        src={session.user.image}
                         alt="Imagem do usuário"
                       />
                     )}
                     <AvatarFallback>
-                      {data?.user?.name?.[0].toUpperCase()}
+                      {session.user?.name?.[0].toUpperCase()}
                     </AvatarFallback>
                   </Avatar>
                   <div className="flex flex-col space-y-1 overflow-hidden">
                     <p className="text-sm font-medium leading-none truncate">
-                      {data?.user?.name}
+                      {session.user?.name}
                     </p>
                     <p className="text-xs leading-none text-muted-foreground truncate">
-                      {data?.user?.email}
+                      {session.user?.email}
                     </p>
                   </div>
                 </DropdownMenuLabel>
@@ -73,6 +69,10 @@ export const UserNav = () => {
                 </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
+          ) : (
+            <ModalLogin>
+              <Button>Fazer login</Button>
+            </ModalLogin>
           )}
         </>
       )}

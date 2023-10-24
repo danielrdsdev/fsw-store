@@ -3,7 +3,7 @@ import { Home, ListOrdered, Percent } from 'lucide-react'
 
 export const NAV: NavProps[] = [
   {
-    name: 'Home',
+    name: 'Início',
     path: '/',
     icon: Home,
   },

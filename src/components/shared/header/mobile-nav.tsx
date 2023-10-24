@@ -18,7 +18,7 @@ import { usePathname } from 'next/navigation'
 import { ModalLogin } from './modal-login'
 
 export const MobileNav = () => {
-  const { data, status } = useSession()
+  const { data: session } = useSession()
   const pathname = usePathname()
 
   return (
@@ -35,29 +35,24 @@ export const MobileNav = () => {
           </SheetHeader>
 
           <div className="mt-6 space-y-4">
-            {status === 'unauthenticated' ? (
-              <SheetClose asChild>
-                <ModalLogin>
-                  <Button variant="outline" className="w-full justify-start">
-                    <LogIn className="w-4 h-4 mr-2" />
-                    Fazer login
-                  </Button>
-                </ModalLogin>
-              </SheetClose>
-            ) : (
+            {session ? (
               <div className="flex flex-col gap-6">
                 <div className="flex items-center gap-4">
                   <Avatar>
                     <AvatarFallback>
-                      {data?.user?.name?.[0].toUpperCase()}
+                      {session.user?.name?.[0].toUpperCase()}
                     </AvatarFallback>
-                    {data?.user?.image && <AvatarImage src={data.user.image} />}
+                    {session.user?.image && (
+                      <AvatarImage src={session.user.image} />
+                    )}
                   </Avatar>
 
                   <div className="flex flex-col overflow-hidden">
-                    <p className="font-semibold truncate">{data?.user?.name}</p>
+                    <p className="font-semibold truncate">
+                      {session.user?.name}
+                    </p>
                     <p className="text-muted-foreground text-sm truncate">
-                      {data?.user?.email}
+                      {session.user?.email}
                     </p>
                   </div>
 
@@ -71,6 +66,15 @@ export const MobileNav = () => {
                   </Button>
                 </div>
               </div>
+            ) : (
+              <SheetClose asChild>
+                <ModalLogin>
+                  <Button variant="outline" className="w-full justify-start">
+                    <LogIn className="w-4 h-4 mr-2" />
+                    Fazer login
+                  </Button>
+                </ModalLogin>
+              </SheetClose>
             )}
 
             <Separator />

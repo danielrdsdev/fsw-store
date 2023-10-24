@@ -23,7 +23,7 @@ import { CartItem } from './cart-item'
 export const Cart = () => {
   const { products, subtotal, total, totalDiscount } = useContext(CartContext)
   const [isLoading, setIsLoading] = useState(false)
-  const { status } = useSession()
+  const { data: session } = useSession()
 
   const handleFinishPurchaseClick = async () => {
     setIsLoading(true)
@@ -39,7 +39,7 @@ export const Cart = () => {
 
   return (
     <>
-      {status === 'authenticated' && (
+      {session && (
         <Sheet>
           <SheetTrigger asChild>
             <Button size="icon" variant="outline" className="relative">
