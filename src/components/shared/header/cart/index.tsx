@@ -33,9 +33,9 @@ export const Cart = () => {
 
     setIsLoading(true)
 
-    await createOrder(products, (session as any).id)
+    const order = await createOrder(products, (session as any).id)
 
-    const checkout = await createCheckout(products)
+    const checkout = await createCheckout(products, order.id)
 
     const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY)
 
