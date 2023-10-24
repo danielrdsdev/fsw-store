@@ -6,8 +6,10 @@ import {
 } from '@/components/ui/accordion'
 import { Card } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
+import { computeProductTotalPrice } from '@/helpers/product'
 import { Prisma } from '@prisma/client'
 import { format } from 'date-fns'
+import { useMemo } from 'react'
 import { OrderProductItem } from './order-product-item'
 
 type OrdemItemProps = {
@@ -23,13 +25,36 @@ type OrdemItemProps = {
 }
 
 export const OrderItem = ({ order }: OrdemItemProps) => {
+  const subtotal = useMemo(() => {
+    return order.orderProducts.reduce((acc, orderProduct) => {
+      return (
+        acc + Number(orderProduct.product.basePrice) * orderProduct.quantity
+      )
+    }, 0)
+  }, [order.orderProducts])
+
+  const total = useMemo(() => {
+    return order.orderProducts.reduce((acc, product) => {
+      const productWithTotalPrice = computeProductTotalPrice(product.product)
+
+      return acc + productWithTotalPrice.totalPrice * product.quantity
+    }, 0)
+  }, [order.orderProducts])
+
+  const totalDiscounts = subtotal - total
+
   return (
     <Card className="px-6">
       <Accordion type="single" className="w-full" collapsible>
         <AccordionItem value={order.id} className="border-0">
-          <AccordionTrigger className="hover:no-underline text-sm font-bold">
+          <AccordionTrigger className="hover:no-underline text-sm">
             <div className="space-y-1 text-left">
-              Pedido com {order.orderProducts.length} produto(s)
+              <p className="font-bold">
+                Pedido com {order.orderProducts.length} produto(s)
+              </p>
+              <span className="text-muted-foreground">
+                Feito em {format(order.createdAt, 'd/MM/y')}
+              </span>
             </div>
           </AccordionTrigger>
 
@@ -62,6 +87,36 @@ export const OrderItem = ({ order }: OrdemItemProps) => {
                   orderProduct={orderProduct}
                 />
               ))}
+
+              <div className="space-y-3">
+                <Separator />
+
+                <div className="flex items-center justify-between text-xs">
+                  <p>Sub Total</p>
+                  <p>R$ {subtotal.toFixed(2)}</p>
+                </div>
+
+                <Separator />
+
+                <div className="flex items-center justify-between text-xs">
+                  <p>Entrega</p>
+                  <p>GRATIS</p>
+                </div>
+
+                <Separator />
+
+                <div className="flex items-center justify-between text-xs">
+                  <p>Descontos</p>
+                  <p>-R$ {totalDiscounts.toFixed(2)}</p>
+                </div>
+
+                <Separator />
+
+                <div className="flex items-center justify-between font-bold text-sm">
+                  <p>Total</p>
+                  <p>R$ {total.toFixed(2)}</p>
+                </div>
+              </div>
             </div>
           </AccordionContent>
         </AccordionItem>
