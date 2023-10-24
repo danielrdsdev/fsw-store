@@ -38,10 +38,10 @@ model Order {
   orderProducts OrderProduct[]
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @default(now()) @updatedAt
-  status        OderStatus     @default(WAITING_FOR_PAYMENT)
+  status        OrderStatus    @default(WAITING_FOR_PAYMENT)
 }
 
-enum OderStatus {
+enum OrderStatus {
   WAITING_FOR_PAYMENT
   PAYMENT_CONFIRMED
 }
@@ -50,8 +50,8 @@ model OrderProduct {
   id                 String  @id @default(uuid())
   productId          String
   product            Product @relation(fields: [productId], references: [id])
-  oderId             String
-  order              Order   @relation(fields: [oderId], references: [id])
+  orderId            String
+  order              Order   @relation(fields: [orderId], references: [id])
   basePrice          Decimal @db.Decimal(8, 2)
   discountPercentage Int     @default(0)
   quantity           Int
