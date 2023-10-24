@@ -14,6 +14,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { Loader2, LogOut, User } from 'lucide-react'
 import { signOut, useSession } from 'next-auth/react'
+import Link from 'next/link'
 import { ModalLogin } from './modal-login'
 
 export const UserNav = () => {
@@ -56,7 +57,9 @@ export const UserNav = () => {
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
-                  <DropdownMenuItem>Meus pedidos</DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/orders">Meus pedidos</Link>
+                  </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>

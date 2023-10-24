@@ -1,5 +1,5 @@
 import { NavProps } from '@/types/nav'
-import { Home, ListOrdered, Percent } from 'lucide-react'
+import { Home, ListOrdered, PackageSearch, Percent } from 'lucide-react'
 
 export const NAV: NavProps[] = [
   {
@@ -16,5 +16,10 @@ export const NAV: NavProps[] = [
     name: 'Catálogo',
     path: '/catalog',
     icon: ListOrdered,
+  },
+  {
+    name: 'Meus pedidos',
+    path: '/orders',
+    icon: PackageSearch,
   },
 ]
