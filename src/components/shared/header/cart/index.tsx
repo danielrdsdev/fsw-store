@@ -22,18 +22,18 @@ import { useContext, useState } from 'react'
 import { CartItem } from './cart-item'
 
 export const Cart = () => {
-  const { data: session } = useSession()
+  const { data, data: session } = useSession()
   const { products, subtotal, total, totalDiscount } = useContext(CartContext)
   const [isLoading, setIsLoading] = useState(false)
 
   const handleFinishPurchaseClick = async () => {
-    if (!session) {
+    if (!data?.user) {
       return
     }
 
     setIsLoading(true)
 
-    const order = await createOrder(products, (session as any).id)
+    const order = await createOrder(products, (data?.user as any).id)
 
     const checkout = await createCheckout(products, order.id)
 
