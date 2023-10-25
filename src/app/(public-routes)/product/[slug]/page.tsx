@@ -38,8 +38,8 @@ export default async function ProductDetailsPage({
   }
 
   return (
-    <main className="space-y-8 pb-16 container lg:py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-full">
+    <main className="container space-y-8 pb-16 lg:py-16">
+      <div className="grid h-full grid-cols-1 gap-8 lg:grid-cols-2">
         <ProductImages imageUrls={product.imageUrls} name={product.name} />
         <ProductInfo product={computeProductTotalPrice(product)} />
       </div>

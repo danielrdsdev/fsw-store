@@ -17,15 +17,15 @@ export default async function DealsPage() {
     },
   })
   return (
-    <main className="container py-16 space-y-8">
+    <main className="container space-y-8 py-16">
       <Badge
         variant="outline"
-        className="px-3 py-2 border-2 font-bold uppercase border-primary"
+        className="border-2 border-primary px-3 py-2 font-bold uppercase"
       >
-        <Percent className="w-4 h-4 mr-2" />
+        <Percent className="mr-2 h-4 w-4" />
         Ofertas
       </Badge>
-      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+      <section className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
         {deals.map((product) => (
           <ProductItem
             key={product.id}

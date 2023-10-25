@@ -21,9 +21,9 @@ export const ButtonsLogin = () => {
         disabled={isLoading}
       >
         {isLoading ? (
-          <Loader2 className="w-6 h-6 mr-2 animate-spin" />
+          <Loader2 className="mr-2 h-6 w-6 animate-spin" />
         ) : (
-          <Icons.google className="w-6 h-6 mr-2" />
+          <Icons.google className="mr-2 h-6 w-6" />
         )}
         Google
       </Button>
@@ -34,9 +34,9 @@ export const ButtonsLogin = () => {
         disabled={isLoading}
       >
         {isLoading ? (
-          <Loader2 className="w-6 h-6 mr-2 animate-spin" />
+          <Loader2 className="mr-2 h-6 w-6 animate-spin" />
         ) : (
-          <Icons.github className="w-6 h-6 mr-2" />
+          <Icons.github className="mr-2 h-6 w-6" />
         )}
         GitHub
       </Button>

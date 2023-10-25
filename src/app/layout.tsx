@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="pt" suppressHydrationWarning>
       <body className={cn(fontSans.variable)}>
         <Providers>
-          <div className="flex flex-col min-h-full">
+          <div className="flex min-h-full flex-col">
             <Header />
             <div className="flex-1">{children}</div>
             <Footer />

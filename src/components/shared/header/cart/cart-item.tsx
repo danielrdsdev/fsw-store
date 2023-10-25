@@ -30,13 +30,13 @@ export const CartItem = ({ product }: CartItemProps) => {
   return (
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-4">
-        <div className="relative h-[77px] w-[77px] bg-muted rounded-lg flex items-center justify-center">
+        <div className="relative flex h-[77px] w-[77px] items-center justify-center rounded-lg bg-muted">
           <Image
             src={product.imageUrls[0]}
             alt={product.name}
             fill
             sizes="100%"
-            className="p-3 object-contain"
+            className="object-contain p-3"
           />
         </div>
 
@@ -45,7 +45,7 @@ export const CartItem = ({ product }: CartItemProps) => {
             <p className="text-xs">{product.name}</p>
 
             <div className="flex items-center gap-2">
-              <p className="font-bold text-sm">
+              <p className="text-sm font-bold">
                 R$ {product.totalPrice.toFixed(2)}
               </p>
               {product.discountPercentage > 0 && (
@@ -61,12 +61,12 @@ export const CartItem = ({ product }: CartItemProps) => {
               onClick={handleDecreaseQuantityClick}
               variant="outline"
               size="icon"
-              className="w-8 h-8"
+              className="h-8 w-8"
             >
-              <Minus className="w-4 h-4" />
+              <Minus className="h-4 w-4" />
             </Button>
 
-            <span className="text-xs w-8 h-8 flex items-center justify-center">
+            <span className="flex h-8 w-8 items-center justify-center text-xs">
               {product.quantity}
             </span>
 
@@ -74,16 +74,16 @@ export const CartItem = ({ product }: CartItemProps) => {
               onClick={handleIncreaseQuantityClick}
               variant="outline"
               size="icon"
-              className="w-8 h-8"
+              className="h-8 w-8"
             >
-              <Plus className="w-4 h-4" />
+              <Plus className="h-4 w-4" />
             </Button>
           </div>
         </div>
       </div>
 
       <Button onClick={handleRemoveProductsClick} variant="outline" size="icon">
-        <Trash className="w-4 h-4" />
+        <Trash className="h-4 w-4" />
       </Button>
     </div>
   )

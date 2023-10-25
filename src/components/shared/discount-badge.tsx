@@ -9,7 +9,7 @@ export const DiscountBadge = ({
 }: BadgeProps) => {
   return (
     <Badge className={cn('px-2 py-0.5', className)} {...props}>
-      <ArrowDown className="w-3 h-3" />
+      <ArrowDown className="h-3 w-3" />
       {children}
     </Badge>
   )

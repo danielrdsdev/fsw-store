@@ -10,7 +10,7 @@ type ProductItemProps = {
 export const ProductItem = ({ product }: ProductItemProps) => {
   return (
     <Link href={`/product/${product.slug}`} className="flex flex-col gap-4">
-      <div className="relative h-[190px] min-w-[180px] max-w-full rounded-lg bg-muted flex items-center justify-center">
+      <div className="relative flex h-[190px] min-w-[180px] max-w-full items-center justify-center rounded-lg bg-muted">
         {product.discountPercentage > 0 && (
           <DiscountBadge className="absolute left-3 top-3 z-10">
             {product.discountPercentage}%
@@ -27,21 +27,21 @@ export const ProductItem = ({ product }: ProductItemProps) => {
       </div>
 
       <div className="space-y-1">
-        <h2 className="text-xs truncate">{product.name}</h2>
+        <h2 className="truncate text-xs">{product.name}</h2>
 
         <div className="flex items-center gap-2">
           {product.discountPercentage > 0 ? (
             <>
-              <span className="font-bold truncate">
+              <span className="truncate font-bold">
                 R$ {product.totalPrice.toFixed(2)}
               </span>
 
-              <span className="text-xs text-muted-foreground line-through truncate">
+              <span className="truncate text-xs text-muted-foreground line-through">
                 R$ {Number(product.basePrice).toFixed(2)}
               </span>
             </>
           ) : (
-            <span className="font-bold truncate">
+            <span className="truncate font-bold">
               R$ {product.basePrice.toFixed(2)}
             </span>
           )}

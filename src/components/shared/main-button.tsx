@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils'
 export const MainButton = ({ className, ...props }: ButtonProps) => {
   return (
     <Button
-      className={cn('text-sm uppercase font-bold w-full', className)}
+      className={cn('w-full text-sm font-bold uppercase', className)}
       {...props}
     />
   )

@@ -15,25 +15,25 @@ export const ProductImages = ({ imageUrls, name }: ProductImagesProps) => {
     setCurrentImage(imageUrl)
   }
   return (
-    <section className="flex flex-col relative">
-      <div className="bg-muted h-[380px] lg:rounded-lg lg:h-full w-full items-center flex justify-center">
+    <section className="relative flex flex-col">
+      <div className="flex h-[380px] w-full items-center justify-center bg-muted lg:h-full lg:rounded-lg">
         <Image
           src={currentImage}
           alt={name}
           width={0}
           height={0}
           sizes="100vw"
-          className="max-h-[385px] max-w-[90%] w-auto h-auto object-contain"
+          className="h-auto max-h-[385px] w-auto max-w-[90%] object-contain"
         />
       </div>
 
-      <div className="grid grid-cols-4 gap-4 mt-8 px-6 lg:absolute left-4 top-4 lg:p-0 lg:grid-cols-1 lg:m-0">
+      <div className="left-4 top-4 mt-8 grid grid-cols-4 gap-4 px-6 lg:absolute lg:m-0 lg:grid-cols-1 lg:p-0">
         {imageUrls.map((imageUrl) => (
           <button
             onClick={() => handleImageClick(imageUrl)}
             key={imageUrl}
             data-active={imageUrl === currentImage}
-            className="relative w-[77px] h-[77px] bg-muted lg:bg-[#0B0B0B] rounded-lg lg:rounded-xl border-2 border-transparent flex items-center justify-center data-[active=true]:border-primary data-[active=true]:border-2"
+            className="relative flex h-[77px] w-[77px] items-center justify-center rounded-lg border-2 border-transparent bg-muted data-[active=true]:border-2 data-[active=true]:border-primary lg:rounded-xl lg:bg-[#0B0B0B]"
           >
             <Image
               src={imageUrl}

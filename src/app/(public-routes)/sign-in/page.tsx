@@ -17,7 +17,7 @@ export default async function SignInPage() {
     redirect('/')
   }
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex h-screen items-center justify-center">
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle>Login</CardTitle>

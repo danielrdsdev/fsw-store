@@ -8,10 +8,10 @@ import {
 } from 'lucide-react'
 
 export const CATEGORY_ICON = {
-  keyboards: <Keyboard className="w-4 h-4 mr-2" />,
-  monitors: <Monitor className="w-4 h-4 mr-2" />,
-  headphones: <Headphones className="w-4 h-4 mr-2" />,
-  mousepads: <Square className="w-4 h-4 mr-2" />,
-  mouses: <Mouse className="w-4 h-4 mr-2" />,
-  speakers: <Speaker className="w-4 h-4 mr-2" />,
+  keyboards: <Keyboard className="mr-2 h-4 w-4" />,
+  monitors: <Monitor className="mr-2 h-4 w-4" />,
+  headphones: <Headphones className="mr-2 h-4 w-4" />,
+  mousepads: <Square className="mr-2 h-4 w-4" />,
+  mouses: <Mouse className="mr-2 h-4 w-4" />,
+  speakers: <Speaker className="mr-2 h-4 w-4" />,
 }

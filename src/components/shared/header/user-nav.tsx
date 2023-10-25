@@ -23,19 +23,19 @@ export const UserNav = () => {
   return (
     <div className="hidden lg:block">
       {status === 'loading' ? (
-        <Loader2 className="w-5 h-5 animate-spin" />
+        <Loader2 className="h-5 w-5 animate-spin" />
       ) : (
         <>
           {session ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="icon">
-                  <User className="w-5 h-5" />
+                  <User className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
 
               <DropdownMenuContent className="w-64" align="end" forceMount>
-                <DropdownMenuLabel className="font-normal flex items-center gap-2">
+                <DropdownMenuLabel className="flex items-center gap-2 font-normal">
                   <Avatar className="h-8 w-8">
                     {session.user?.image && (
                       <AvatarImage
@@ -48,10 +48,10 @@ export const UserNav = () => {
                     </AvatarFallback>
                   </Avatar>
                   <div className="flex flex-col space-y-1 overflow-hidden">
-                    <p className="text-sm font-medium leading-none truncate">
+                    <p className="truncate text-sm font-medium leading-none">
                       {session.user?.name}
                     </p>
-                    <p className="text-xs leading-none text-muted-foreground truncate">
+                    <p className="truncate text-xs leading-none text-muted-foreground">
                       {session.user?.email}
                     </p>
                   </div>
@@ -71,7 +71,7 @@ export const UserNav = () => {
                   <DropdownMenuItem onClick={() => signOut()}>
                     Log out
                     <DropdownMenuShortcut>
-                      <LogOut className="w-4 h-4" />
+                      <LogOut className="h-4 w-4" />
                     </DropdownMenuShortcut>
                   </DropdownMenuItem>
                 </DropdownMenuGroup>

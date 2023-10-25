@@ -25,7 +25,7 @@ export const BackToTop = () => {
     <AnimatePresence>
       {show && (
         <motion.div
-          className="fixed right-4 bottom-4 z-20"
+          className="fixed bottom-4 right-4 z-20"
           initial={{ opacity: 0, right: -10 }}
           animate={{ opacity: 1, right: 16 }}
           exit={{ opacity: 0, right: -10 }}
@@ -35,7 +35,7 @@ export const BackToTop = () => {
             onClick={scrollToTop}
             className="shadow-lg shadow-primary/50"
           >
-            <ArrowUp className="w-4 h-4" />
+            <ArrowUp className="h-4 w-4" />
           </Button>
         </motion.div>
       )}

@@ -49,7 +49,7 @@ export default async function Home() {
         <Categories />
       </section>
 
-      <section className="space-y-4 container">
+      <section className="container space-y-4">
         <SectionLink href="/deals">Ofertas</SectionLink>
         <ProductList products={deals} />
       </section>
@@ -61,7 +61,7 @@ export default async function Home() {
           className="lg:hidden"
         />
 
-        <div className="hidden lg:grid grid-cols-2 gap-8">
+        <div className="hidden grid-cols-2 gap-8 lg:grid">
           <PromoBanner
             src="/banner-home-02-desktop.png"
             alt="Até 55% de desconto em mouses"
@@ -73,7 +73,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="space-y-4 container">
+      <section className="container space-y-4">
         <SectionLink href="/category/keyboards">Teclados</SectionLink>
         <ProductList products={keyboards} />
       </section>
@@ -91,7 +91,7 @@ export default async function Home() {
         />
       </section>
 
-      <section className="space-y-4 container">
+      <section className="container space-y-4">
         <SectionLink href="/category/mouses">Mouses</SectionLink>
         <ProductList products={mouses} />
       </section>

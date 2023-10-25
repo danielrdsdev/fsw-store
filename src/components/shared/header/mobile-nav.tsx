@@ -26,7 +26,7 @@ export const MobileNav = () => {
       <Sheet>
         <SheetTrigger asChild>
           <Button size="icon" variant="outline">
-            <Menu className="w-5 h-5" />
+            <Menu className="h-5 w-5" />
           </Button>
         </SheetTrigger>
         <SheetContent side="left" className="w-96">
@@ -48,10 +48,10 @@ export const MobileNav = () => {
                   </Avatar>
 
                   <div className="flex flex-col overflow-hidden">
-                    <p className="font-semibold truncate">
+                    <p className="truncate font-semibold">
                       {session.user?.name}
                     </p>
-                    <p className="text-muted-foreground text-sm truncate">
+                    <p className="truncate text-sm text-muted-foreground">
                       {session.user?.email}
                     </p>
                   </div>
@@ -62,7 +62,7 @@ export const MobileNav = () => {
                     size="icon"
                     className="ml-auto"
                   >
-                    <LogOut className="w-5 h-5" />
+                    <LogOut className="h-5 w-5" />
                   </Button>
                 </div>
                 <SheetClose asChild>
@@ -72,7 +72,7 @@ export const MobileNav = () => {
                     className="w-full justify-start"
                   >
                     <Link href="/orders">
-                      <PackageSearch className="w-4 h-4 mr-2" />
+                      <PackageSearch className="mr-2 h-4 w-4" />
                       Meus pedidos
                     </Link>
                   </Button>
@@ -82,7 +82,7 @@ export const MobileNav = () => {
               <SheetClose asChild>
                 <ModalLogin>
                   <Button variant="outline" className="w-full justify-start">
-                    <LogIn className="w-4 h-4 mr-2" />
+                    <LogIn className="mr-2 h-4 w-4" />
                     Fazer login
                   </Button>
                 </ModalLogin>
@@ -101,7 +101,7 @@ export const MobileNav = () => {
                     className="w-full justify-start data-[active=true]:bg-accent"
                   >
                     <Link href={item.path}>
-                      {item.icon && <item.icon className="w-4 h-4 mr-2" />}
+                      {item.icon && <item.icon className="mr-2 h-4 w-4" />}
                       {item.name}
                     </Link>
                   </Button>

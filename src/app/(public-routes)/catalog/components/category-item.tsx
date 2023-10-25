@@ -9,7 +9,7 @@ type CategoryItemProps = {
 export const CategoryItem = ({ category }: CategoryItemProps) => {
   return (
     <Link href={`/category/${category.slug}`} className="flex flex-col">
-      <div className="h-[150px] flex items-center justify-center rounded-t-lg bg-gradient-category-item">
+      <div className="flex h-[150px] items-center justify-center rounded-t-lg bg-gradient-category-item">
         <Image
           src={category.imageUrl}
           alt={category.name}
@@ -19,8 +19,8 @@ export const CategoryItem = ({ category }: CategoryItemProps) => {
         />
       </div>
 
-      <div className="bg-muted rounded-b-lg py-3">
-        <p className="text-sm font-semibold text-center">{category.name}</p>
+      <div className="rounded-b-lg bg-muted py-3">
+        <p className="text-center text-sm font-semibold">{category.name}</p>
       </div>
     </Link>
   )

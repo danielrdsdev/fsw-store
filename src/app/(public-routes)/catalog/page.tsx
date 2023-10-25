@@ -15,12 +15,12 @@ export default async function CatalogPage() {
       <section className="space-y-8">
         <Badge
           variant="outline"
-          className="px-3 py-2 border-2 font-bold uppercase border-primary"
+          className="border-2 border-primary px-3 py-2 font-bold uppercase"
         >
-          <Shapes className="w-4 h-4 mr-1.5" />
+          <Shapes className="mr-1.5 h-4 w-4" />
           Catálogo
         </Badge>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
           {categories.map((category) => (
             <CategoryItem key={category.id} category={category} />
           ))}

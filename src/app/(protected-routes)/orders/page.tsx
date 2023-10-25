@@ -28,9 +28,9 @@ export default async function OrderPage() {
       <section className="space-y-8">
         <Badge
           variant="outline"
-          className="px-3 py-2 border-2 font-bold uppercase border-primary"
+          className="border-2 border-primary px-3 py-2 font-bold uppercase"
         >
-          <PackageSearch className="w-4 h-4 mr-2" />
+          <PackageSearch className="mr-2 h-4 w-4" />
           Meus pedidos
         </Badge>
 

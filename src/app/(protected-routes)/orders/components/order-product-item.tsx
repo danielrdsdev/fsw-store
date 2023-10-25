@@ -14,7 +14,7 @@ export const OrderProductItem = ({ orderProduct }: OrderProductItemProps) => {
   const productWithTotalPrice = computeProductTotalPrice(orderProduct.product)
   return (
     <div className="flex items-center gap-4">
-      <div className="relative w-[77px] h-[77px] flex items-center justify-center rounded-lg bg-muted">
+      <div className="relative flex h-[77px] w-[77px] items-center justify-center rounded-lg bg-muted">
         <Image
           src={orderProduct.product.imageUrls[0]}
           alt={orderProduct.product.name}
@@ -23,8 +23,8 @@ export const OrderProductItem = ({ orderProduct }: OrderProductItemProps) => {
         />
       </div>
 
-      <div className="flex flex-col gap-2 flex-1">
-        <p className="text-[10px] bg-muted rounded-md px-4 py-0.5 w-max">
+      <div className="flex flex-1 flex-col gap-2">
+        <p className="w-max rounded-md bg-muted px-4 py-0.5 text-[10px]">
           Vendido e entregue por:{' '}
           <span className="font-semibold">FSW Store</span>
         </p>
@@ -39,7 +39,7 @@ export const OrderProductItem = ({ orderProduct }: OrderProductItemProps) => {
               </p>
 
               {productWithTotalPrice.discountPercentage > 0 && (
-                <p className="text-xs line-through text-muted-foreground">
+                <p className="text-xs text-muted-foreground line-through">
                   R$ {Number(productWithTotalPrice.totalPrice.toFixed(2))}
                 </p>
               )}

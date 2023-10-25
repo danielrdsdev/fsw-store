@@ -50,25 +50,25 @@ export const Cart = () => {
         <Sheet>
           <SheetTrigger asChild>
             <Button size="icon" variant="outline" className="relative">
-              <Badge className="absolute -right-2 -top-2 p-0 flex items-center justify-center w-5 h-5 font-normal">
+              <Badge className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center p-0 font-normal">
                 {products.length}
               </Badge>
-              <ShoppingCart className="w-5 h-5" />
+              <ShoppingCart className="h-5 w-5" />
             </Button>
           </SheetTrigger>
-          <SheetContent className="flex flex-col w-96">
+          <SheetContent className="flex w-96 flex-col">
             <SheetHeader className="mb-5">
               <Badge
                 variant="outline"
-                className="px-3 w-fit py-2 border-2 font-bold uppercase border-primary"
+                className="w-fit border-2 border-primary px-3 py-2 font-bold uppercase"
               >
-                <ShoppingCart className="w-4 h-4 mr-2" />
+                <ShoppingCart className="mr-2 h-4 w-4" />
                 Carrinho
               </Badge>
             </SheetHeader>
 
             <ScrollArea>
-              <div className="space-y-5 h-full pr-4">
+              <div className="h-full space-y-5 pr-4">
                 {products.length > 0 ? (
                   products.map((product) => (
                     <CartItem
@@ -77,7 +77,7 @@ export const Cart = () => {
                     />
                   ))
                 ) : (
-                  <p className="text-center text-sm text-muted-foreground font-medium">
+                  <p className="text-center text-sm font-medium text-muted-foreground">
                     Seu carrinho está vazio.
                   </p>
                 )}
@@ -85,7 +85,7 @@ export const Cart = () => {
             </ScrollArea>
 
             {products.length > 0 && (
-              <div className="space-y-8 mt-auto">
+              <div className="mt-auto space-y-8">
                 <div className="space-y-3">
                   <Separator />
 
@@ -103,7 +103,7 @@ export const Cart = () => {
 
                   <Separator />
 
-                  <div className="flex items-center justify-between font-bold text-sm">
+                  <div className="flex items-center justify-between text-sm font-bold">
                     <p>Total</p>
                     <p>R$ {total.toFixed(2)}</p>
                   </div>
@@ -115,7 +115,7 @@ export const Cart = () => {
                 >
                   {isLoading ? (
                     <>
-                      <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
                       <span>Processando...</span>
                     </>
                   ) : (

@@ -48,7 +48,7 @@ export const OrderItem = ({ order }: OrdemItemProps) => {
     <Card className="px-6">
       <Accordion type="single" className="w-full" collapsible>
         <AccordionItem value={order.id} className="border-0">
-          <AccordionTrigger className="hover:no-underline text-sm">
+          <AccordionTrigger className="text-sm hover:no-underline">
             <div className="space-y-1 text-left">
               <p className="font-bold">
                 Pedido com {order.orderProducts.length} produto(s)
@@ -62,7 +62,7 @@ export const OrderItem = ({ order }: OrdemItemProps) => {
           <AccordionContent>
             <div className="space-y-5">
               <div className="flex items-center justify-between">
-                <div className="flex flex-col font-bold text-xs">
+                <div className="flex flex-col text-xs font-bold">
                   <p className="uppercase">Status</p>
                   <p className="text-[#8162FF]">
                     {getOrderStatus(order.status)}
@@ -70,14 +70,14 @@ export const OrderItem = ({ order }: OrdemItemProps) => {
                 </div>
 
                 <div className="flex flex-col text-xs">
-                  <p className="uppercase font-bold">Data</p>
+                  <p className="font-bold uppercase">Data</p>
                   <p className="text-muted-foreground">
                     {format(order.createdAt, 'd/MM/y')}
                   </p>
                 </div>
 
                 <div className="flex flex-col text-xs">
-                  <p className="uppercase font-bold">Pagamento</p>
+                  <p className="font-bold uppercase">Pagamento</p>
                   <p className="text-muted-foreground">Cartao</p>
                 </div>
               </div>
@@ -115,7 +115,7 @@ export const OrderItem = ({ order }: OrdemItemProps) => {
 
                 <Separator />
 
-                <div className="flex items-center justify-between font-bold text-sm">
+                <div className="flex items-center justify-between text-sm font-bold">
                   <p>Total</p>
                   <p>R$ {total.toFixed(2)}</p>
                 </div>

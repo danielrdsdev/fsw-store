@@ -7,14 +7,14 @@ import { UserNav } from './user-nav'
 
 export const Header = () => {
   return (
-    <header className="h-20 border-b px-6 lg:px-32 flex items-center justify-between">
+    <header className="flex h-20 items-center justify-between border-b px-6 lg:px-32">
       <MobileNav />
 
-      <Link href="/" className="font-bold text-lg text-primary">
+      <Link href="/" className="text-lg font-bold text-primary">
         FSW <span className="font-semibold text-foreground">Store</span>
       </Link>
 
-      <div className="hidden lg:flex items-center">
+      <div className="hidden items-center lg:flex">
         {NAV.map((item) => (
           <NavLink key={item.path} href={item.path}>
             {item.name}
