@@ -16,6 +16,9 @@ export const authOptions: AuthOptions = {
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),
   ],
+  pages: {
+    signIn: '/sign-in',
+  },
   callbacks: {
     async session({ session, token, user }) {
       session.user = { ...session.user, id: user.id } as {

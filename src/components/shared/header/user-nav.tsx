@@ -33,6 +33,7 @@ export const UserNav = () => {
                   <User className="w-5 h-5" />
                 </Button>
               </DropdownMenuTrigger>
+
               <DropdownMenuContent className="w-64" align="end" forceMount>
                 <DropdownMenuLabel className="font-normal flex items-center gap-2">
                   <Avatar className="h-8 w-8">
@@ -55,13 +56,17 @@ export const UserNav = () => {
                     </p>
                   </div>
                 </DropdownMenuLabel>
+
                 <DropdownMenuSeparator />
+
                 <DropdownMenuGroup>
                   <DropdownMenuItem asChild>
                     <Link href="/orders">Meus pedidos</Link>
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
+
                 <DropdownMenuSeparator />
+
                 <DropdownMenuGroup>
                   <DropdownMenuItem onClick={() => signOut()}>
                     Log out

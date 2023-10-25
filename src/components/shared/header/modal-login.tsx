@@ -1,3 +1,4 @@
+import { ButtonsLogin } from '@/components/shared/buttons-login'
 import {
   Dialog,
   DialogContent,
@@ -7,7 +8,6 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog'
 import { DialogProps } from '@radix-ui/react-dialog'
-import { ButtonsArea } from './buttons-area'
 
 export const ModalLogin = ({ children, ...props }: DialogProps) => {
   return (
@@ -23,7 +23,7 @@ export const ModalLogin = ({ children, ...props }: DialogProps) => {
           </DialogDescription>
         </DialogHeader>
 
-        <ButtonsArea />
+        <ButtonsLogin />
       </DialogContent>
     </Dialog>
   )
