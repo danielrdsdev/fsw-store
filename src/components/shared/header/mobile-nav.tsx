@@ -11,7 +11,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet'
 import { NAV } from '@/constants/nav'
-import { LogIn, LogOut, Menu } from 'lucide-react'
+import { LogIn, LogOut, Menu, PackageSearch } from 'lucide-react'
 import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -65,6 +65,18 @@ export const MobileNav = () => {
                     <LogOut className="w-5 h-5" />
                   </Button>
                 </div>
+                <SheetClose asChild>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full justify-start"
+                  >
+                    <Link href="/orders">
+                      <PackageSearch className="w-4 h-4 mr-2" />
+                      Meus pedidos
+                    </Link>
+                  </Button>
+                </SheetClose>
               </div>
             ) : (
               <SheetClose asChild>
