@@ -10,10 +10,6 @@ export const dynamic = 'force-dynamic'
 export default async function OrderPage() {
   const user = getServerSession(authOptions)
 
-  if (!user) {
-    return <p>Access Denied</p>
-  }
-
   const orders = await prismaClient.order.findMany({
     where: {
       userId: (user as any).id,
