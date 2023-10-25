@@ -34,11 +34,13 @@ export default async function Home() {
         <PromoBanner
           src="/banner-home-01.png"
           alt="Até 50% de descontos só esse mês"
+          priority
           className="lg:hidden"
         />
         <PromoBanner
           src="/banner-home-01-desktop.png"
           alt="Até 50% de descontos só esse mês"
+          priority
           className="hidden lg:block"
         />
       </section>
