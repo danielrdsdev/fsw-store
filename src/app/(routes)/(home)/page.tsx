@@ -28,6 +28,7 @@ export default async function Home() {
       },
     },
   })
+
   return (
     <main className="space-y-16 py-16 lg:pt-0">
       <section>

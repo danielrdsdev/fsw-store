@@ -32,8 +32,6 @@ export default async function OrderPage() {
     },
   })
 
-  await new Promise((resolve) => setTimeout(resolve, 4000))
-
   return (
     <main className="container py-16">
       <section className="space-y-8">
