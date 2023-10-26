@@ -1,10 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['fsw-store.s3.sa-east-1.amazonaws.com', 'utfs.io', 'i.imgur.com'],
-  },
-  experimental: {
-    serverActions: true,
+    remotePatterns: [
+      {
+        hostname: 'fsw-store.s3.sa-east-1.amazonaws.com',
+      },
+      {
+        hostname: 'utfs.io',
+      },
+      {
+        hostname: 'i.imgur.com',
+      },
+    ],
   },
 }
 
