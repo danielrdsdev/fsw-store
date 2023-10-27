@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils'
 import Providers from '@/providers'
 import { fontSans } from '@/styles/fonts'
 import type { Metadata } from 'next'
+import NextTopLoader from 'nextjs-toploader'
 
 export const metadata: Metadata = {
   title: {
@@ -23,6 +24,11 @@ export default function RootLayout({
   return (
     <html lang="pt" suppressHydrationWarning>
       <body className={cn(fontSans.variable)}>
+        <NextTopLoader
+          height={3}
+          color="#4f32c3"
+          easing="cubic-bezier(0.53,0.21,0,1)"
+        />
         <Providers>
           <div className="flex min-h-full flex-col">
             <Header />
